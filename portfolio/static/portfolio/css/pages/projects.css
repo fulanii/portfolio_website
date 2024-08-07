@@ -1,0 +1,126 @@
+
+#projects {
+    margin: 0 0 50px 250px;
+}
+
+.projects-h1 {
+    font-size: 150px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-img {
+    height: 300px;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-img img {
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content-h2,
+.timeline-content-p,
+.project-link {
+    font-family: "Open Sans", sans-serif;
+}
+
+.timeline-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.timeline-content p {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.timeline-item:hover .timeline-content {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-link {
+    background: var(--btn-color);
+    color: var(--black-text-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+/* Media queries */
+/* Media queries */
+
+@media (max-width: 775px) {
+    #projects {
+        margin: 0 0 50px 0;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+    }
+
+    .timeline-item:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .timeline-img {
+        margin: 20px 0;
+    }
+
+    .timeline-content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .timeline-item {
+        flex-direction: column;
+    }
+
+    .timeline-item:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .timeline-img {
+        margin: 20px 0;
+    }
+
+    .timeline-content {
+        width: 100%;
+    }
+}

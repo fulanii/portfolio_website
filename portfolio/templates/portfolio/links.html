@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <title>Yassine | Links</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'portfolio/images/favicon.ico' %}" />
+        <link rel="stylesheet" href="{% static 'portfolio/css/base/reset.css' %}" />
+        <link rel="stylesheet" href="{% static 'portfolio/css/base/base.css' %}" />
+        <link rel="stylesheet" href="{% static 'portfolio/css/pages/links.css' %}" />
+    </head>
+    <body id="links-body">
+        <section id="links">
+            <div class="links-div">
+                <h1 class="links-username">@Yassine</h1>
+                
+                <div class="links-ul">
+                    {% for i in url_data %}
+                        <a href=" {{ i.url }}" class="links-li">
+                            {{ i.name }}
+                        </a>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </section>
+
+        <script
+            type="module"
+            src="{% static 'portfolio/javascript/utils/responsiveLinks.js' %}"
+        ></script>
+    </body>
+</html>

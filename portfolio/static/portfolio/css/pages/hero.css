@@ -1,0 +1,175 @@
+#hero {
+    margin-left: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+/* hero icon */
+/* hero icon */
+.header__icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--btn-color);
+    padding: 10px;
+    border-radius: 100%;
+    position: fixed;
+    z-index: 1;
+}
+.icon-a {
+    color: var(--nav-icon-color);
+}
+/* ------------------------------------------------------------------------- */
+
+/* hero main */
+/* hero main */
+.hero__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.hero__my-name {
+    font-size: 150px;
+}
+
+.hero__job-title{
+    font-size: 50px;
+}
+
+.hero-job__titles {
+    border-right: 2px solid black; /* Cursor effect */
+    white-space: nowrap;
+    overflow: hidden;
+    text-decoration: underline var(--my-red-color);
+
+    /* text-decoration-thickness: var(--under-line-thickness); */
+}
+
+/* hero social list */
+/* hero social list */
+.hero__social-links {
+    display: flex;
+    flex-direction: row;
+}
+.social__li {
+    font-size: 30px;
+    margin: 10px 30px 0 0;
+}
+.social__a {
+    color: var(--my-red-color);
+}
+.social__a:hover {
+    color: var(--black-text-color);
+}
+/* ------------------------------------------------------------------------- */
+
+/* Typewriter */
+/* Typewriter */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+@keyframes blink {
+    0%,
+    100% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: black;
+    }
+}
+.typing {
+    animation: typing 2s steps(20) forwards, blink 0.75s step-end infinite;
+}
+@keyframes erasing {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}
+.erasing {
+    animation: erasing 2s steps(20) forwards, blink 0.75s step-end infinite;
+}
+/* ------------------------------------------------------------------------- */
+
+/* Hero media queries */
+/* Hero media queries */
+@media (max-width: 1130px) {
+    #hero{
+        justify-content: center;
+    }
+    .hero__my-name{
+        font-size: 120px;
+    }
+    .hero__job-title{
+        font-size: 40px;
+    }
+    .social__li{
+        font-size: 25px;
+    }
+}
+@media (max-width: 962px) {
+    #hero {
+        justify-content: flex-start;
+    }
+    .hero__my-name{
+        font-size: 100px;
+
+    }
+    .hero__job-title{
+        font-size: 30px
+    }
+    .social__li{
+        font-size: 20px
+    }
+
+}
+@media (max-width: 850px){
+    .hero__my-name{
+        font-size: 80px;
+    }
+    .hero__job-title{
+        font-size: 25px
+    }
+    .social__li{
+        font-size: 15px
+    }
+}
+@media (max-width: 775px){
+    #hero {
+        margin-left: 0;
+        justify-content: center;
+    }
+}
+@media (max-width: 490px){
+
+    .hero__my-name{
+        font-size: 50px;
+    }
+    .hero__job-title{
+        font-size: 20px
+    }
+    .social__li{
+        font-size: 15px
+    }
+}
+@media (max-width: 320px){
+    .hero__my-name{
+        font-size: 30px;
+    }
+    .hero__job-title{
+        font-size: 25px
+    }
+    .social__li{
+        font-size: 10px
+    }
+}

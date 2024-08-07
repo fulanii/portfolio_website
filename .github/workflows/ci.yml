@@ -1,0 +1,10 @@
+name: Run Tests
+
+on: [push]
+
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Placeholder step
+        run: echo "CI workflow placeholder"

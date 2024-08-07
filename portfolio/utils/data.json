@@ -1,0 +1,30 @@
+[
+    {
+        "name": "GitHub",
+        "url": "https://github.com/fulanii"
+    },
+    {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com"
+    },
+    {
+        "name": "Twiter",
+        "url": "https://x.com"
+    },
+    {
+        "name": "Tiktok",
+        "url": "https://tiktok.com"
+    },
+    {
+        "name": "Instagram",
+        "url": "https://instagram.org/"
+    },
+    {
+        "name": "Youtube",
+        "url": "https://youtube.com/"
+    },
+    {
+        "name": "Email",
+        "url": "https://gmail.com/"
+    }
+]
