@@ -46,21 +46,14 @@
             <span class="about-me__span">I'm Yassine</span>
             from the United States.
             <br />
-            - I'm currently studying Computer Science. I have a big interests in anything
-            <span class="about-me__span">Data</span>
-            related like
-            <span class="about-me__span">Data Analytics, Science, Ml & Ai</span>
-            and I really enjoy
-            <span class="about-me__span">backend web development</span>
-            . I been programing and writting code since high school, around the beginning of the
-            Covid-19 pandenic, I started taking a lot of different online classes to get ahead for
-            when i go to college. After high school i went to a community college to take general
-            education classes, that's when I strated doing more research to become a
-            <span class="about-me__span">Data Analysis</span>
-            so I started taking online certifications and courses. - Fast foward now I'm self taught
-            with all the required skills needed to be a
-            <span class="about-me__span">Jr Data Analysis</span>
-            .
+            - I'm a self-taught Software Enginer. I have a big interest in various tech fields including
+            <span class="about-me__span">Web Development</span> (mostly focus on the backend). And <span class="about-me__span">Data, Quality Assurance</span> related fields.
+            I've been programming and writing code since high school.
+            Around the beginning of the COVID-19 pandemic, I took various online classes
+            to get ahead for when I go to college for my bachalor in <span class="about-me__span"> Computer Science</span>. After high school I attended a community college to take
+            general education classes, that's when I strated doing more research to become self-taught.
+            <br />
+            - Fast forward to now I have a diverse set of skills suitable for various roles in the tech industry.
         </p>
     </div>
 </section>
@@ -198,18 +191,22 @@
     </div>
 </section>
 
-<!-- <section id="projects">
+<section id="projects">
     <h1 class="projects-h1">Projects</h1>
     <div class="timeline">
         <div class="timeline-item" data-aos="fade-up">
-            <div class="timeline-img">
-                <img src="{% static 'portfolio/images/Python.svg' %}" alt="Project 1 Image" />
-            </div>
+            <figure class="timeline-img">
+                <img
+                    src="{% static 'portfolio/images/flaskproject.gif' %}"
+                    alt="Flask web app with user auth"
+                />
+                <figcaption>Project demonstration</figcaption>
+            </figure>
             <div class="timeline-content">
                 <h2 class="timeline-content-h2">Flask web app with user auth</h2>
                 <p class="timeline-content-p">
                     A secured flask web app where users can register an account, store the user info
-                    in a SQL(sqlite) database with password hashing, login, create posts, see other
+                    in a SQLite database with password hashing, login, create posts, see other
                     people's posts, and be able to logout.
                 </p>
                 <a
@@ -221,61 +218,35 @@
                 </a>
             </div>
         </div>
-        
-        <div class="timeline-item" data-aos="fade-up">
-            <div class="timeline-img">
-                <img src="{% static 'portfolio/images/Python.svg' %}" alt="Project 1 Image" />
-            </div>
-            <div class="timeline-content">
-                <h2 class="timeline-content-h2">Rest API using FastAPI</h2>
-                <p class="timeline-content-p">
-                    A rest API with Auth using FastAPI and their auto gen docs
-                </p>
-                <a
-                    href="https://github.com/fulanii/fastapi-project"
-                    class="project-link"
-                    target="_blank"
-                >
-                    View Project
-                </a>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-
-<section id="projects">
-    <h1 class="projects-h1">Projects</h1>
-    <div class="timeline">
-        <div class="timeline-item" data-aos="fade-up">
-            <figure class="timeline-img">
-                <img src="{% static 'portfolio/images/flaskproject.gif' %}" alt="Flask web app with user auth" />
-                <figcaption>Project demonstration</figcaption>
-            </figure>
-            <div class="timeline-content">
-                <h2 class="timeline-content-h2">Flask web app with user auth</h2>
-                <p class="timeline-content-p">
-                    A secured flask web app where users can register an account, store the user info
-                    in a SQLite database with password hashing, login, create posts, see other
-                    people's posts, and be able to logout.
-                </p>
-                <a href="https://github.com/fulanii/flask-auth-project" class="project-link" target="_blank">
-                    View Project
-                </a>
-            </div>
-        </div>
 
         <div class="timeline-item" data-aos="fade-up">
             <figure class="timeline-img">
-                <img src="{% static 'portfolio/images/fastapiproject.gif' %}" alt="Rest API using FastAPI" />
+                <img
+                    src="{% static 'portfolio/images/fastapiproject.gif' %}"
+                    alt="Rest API using FastAPI"
+                />
                 <figcaption>Project demonstration</figcaption>
             </figure>
             <div class="timeline-content">
                 <h2 class="timeline-content-h2">Rest API using Fask & FastAPI</h2>
                 <p class="timeline-content-p">
-                    To build this project I first scraped and cleaned country data online. Then stored the data in a PostgreSQL database, with this api you can access countries info like: name, capital, population, area size, country code and country iso code. FastAPI version <a target="_blank" href="https://github.com/fulanii/fastapi-project" style="color: var(--btn-color);">here.</a>             
-                 </p>
-                <a href="https://github.com/fulanii/rest-api-project" class="project-link" target="_blank">
+                    To build this project I first scraped and cleaned country data online. Then
+                    stored the data in a PostgreSQL database, with this api you can access countries
+                    info like: name, capital, population, area size, country code and country iso
+                    code. FastAPI version
+                    <a
+                        target="_blank"
+                        href="https://github.com/fulanii/fastapi-project"
+                        style="color: var(--btn-color)"
+                    >
+                        here.
+                    </a>
+                </p>
+                <a
+                    href="https://github.com/fulanii/rest-api-project"
+                    class="project-link"
+                    target="_blank"
+                >
                     View Project
                 </a>
             </div>
