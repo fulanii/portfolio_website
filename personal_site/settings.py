@@ -31,7 +31,7 @@ if os.getenv("ENVIRONMENT") == "development":
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(",")
 
 # Application definition
 
