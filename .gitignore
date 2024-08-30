@@ -28,4 +28,4 @@ dist/
 build/
 *.sublime-project
 *.sublime-workspace
-settings.py
+personal_site/settings.py
