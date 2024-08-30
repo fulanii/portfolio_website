@@ -23,6 +23,3 @@ def links(request):
         "url_data": read_data(),
     }
     return render(request, "portfolio/links.html", context)
-
-def temp_blog(request):
-    return render(request, "portfolio/temp_blog.html")
