@@ -147,3 +147,6 @@ elif os.getenv("ENVIRONMENT") == "development":
     CSRF_COOKIE_SECURE = False
     SECURE_SSL_REDIRECT = False
     SECURE_HSTS_SECONDS = 0
+
+LOGIN_URL = os.getenv("LOGIN_URL")
+LOGIN_REDIRECT_URL = os.getenv("LOGIN_REDIRECT_URL")
