@@ -26,5 +26,6 @@ jobs:
       - name: Run tests
         env:
           DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
+          ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
         run: |
           python manage.py test portfolio.tests.unit
