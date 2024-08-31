@@ -150,3 +150,23 @@ elif os.getenv("ENVIRONMENT") == "development":
 
 LOGIN_URL = os.getenv("LOGIN_URL")
 LOGIN_REDIRECT_URL = os.getenv("LOGIN_REDIRECT_URL")
+
+if os.getenv("ENIVIRONMENT") == "production":
+    LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': '/path/to/django/error.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
