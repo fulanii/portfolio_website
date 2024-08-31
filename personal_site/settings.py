@@ -159,7 +159,7 @@ if os.getenv("ENIVIRONMENT") == "production":
         'file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': '{BASE_DIR}error.log',
+            'filename': '{BASE_DIR}/error.log',
         },
     },
     'loggers': {
