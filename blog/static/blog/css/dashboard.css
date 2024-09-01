@@ -1,0 +1,21 @@
+/* header nav */
+/* header nav */
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: aqua;
+}
+.nav h1 {
+    font-size: larger;
+}
+.logout a{
+    text-decoration: none;
+    padding: 10px;
+    border: solid;
+    background-color: white;
+    border-radius: 10px;
+}
+/* header nav -------------------------- header nav */
+/* header nav -------------------------- header nav */
