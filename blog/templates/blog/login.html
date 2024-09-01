@@ -17,22 +17,12 @@
 <body>
 
     <div class="main">
-
-        <!-- <form action="">
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email">
-            <br>
-
-            <label class="password-label" for="password">Password:</label><br>
-            <input type="password" id="password" name="password">
-            <br>
-            <br>
-
-            <input type="submit" value="Submit">
-        </form>  -->
-
         <form action="/blog/login/" method="post">
             {% csrf_token %}
+
+            {% if error %}
+                <p class="error-msg">{{ error }}</p>
+            {% endif %}
 
             <div class="mb-3">
               <label  for="username" class="form-label">Username</label>

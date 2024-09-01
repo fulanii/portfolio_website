@@ -9,3 +9,9 @@
 .password-label {
     margin-top: 10px;
 }
+.error-msg{
+    border: solid;
+    margin: 10px 0 10px 0;
+    padding: 10px;
+    background-color: red;
+}
