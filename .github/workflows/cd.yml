@@ -18,6 +18,7 @@ jobs:
         HOST: ${{ secrets.PRODUCTION_HOST }}
         USERNAME: ${{ secrets.PRODUCTION_USER }}
         PASSWORD: ${{ secrets.PRODUCTION_PASSWORD }}
+
       run: |
         sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no $USERNAME@$HOST "
         cd /home/portfolio_website &&

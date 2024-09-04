@@ -29,3 +29,4 @@ build/
 *.sublime-project
 *.sublime-workspace
 error.log
+db.json
