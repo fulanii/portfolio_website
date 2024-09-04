@@ -329,11 +329,6 @@ const editorConfig = {
 };
 
 let editor;
-
-// ClassicEditor.create(document.querySelector("#editor"), editorConfig).catch((error) => {
-//     console.error(error);
-// });
-
 ClassicEditor.create(document.querySelector("#editor"), editorConfig)
     .then((newEditor) => {
         editor = newEditor;
@@ -342,8 +337,3 @@ ClassicEditor.create(document.querySelector("#editor"), editorConfig)
         console.error(error);
     });
 
-document.querySelector("#submit-btn").addEventListener("click", () => {
-    const editorData = editor.getData();
-
-    console.log(editorData);
-});

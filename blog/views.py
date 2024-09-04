@@ -4,10 +4,14 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.http import require_http_methods
 from django.urls import reverse
+from .models import Blog
+from django.http import JsonResponse
+
 
 # Create your views here.
 def blog_home(request):
-    return render(request, "blog/home.html")
+    all_blog = Blog.objects.all()
+    return render(request, "blog/home.html", {"blogs": all_blog})
 
 
 def blog_login(request):
@@ -33,18 +37,20 @@ def blog_logout(request):
 @login_required
 def blog_dashboard(request):
     name = request.session.get('name')
-    return render(request, "blog/dashboard.html", {"name": name.title()})
+    return render(request, "blog/dashboard.html", {"name": name})
+
 
 
 @require_http_methods(["POST"])
 def submit_blog(request):
     if request.method == "POST":
-        thumbnail = request.FILES.get("thumbnail")
         title = request.POST.get('title')
         content = request.POST.get('content')  # This contains the HTML from CKEditor
-        status = request.POST.get('status')
 
-        print(f"thumbnail: {thumbnail}, title: {title}, content: {content}, status: {status}")
-        # Save to your db model 
-
-    return HttpResponse("Submitted....")
+        try:
+            Blog.objects.create(title=title, content=content)
+            return JsonResponse({"status": "success", "message": "Blog published successfully!"})
+        except Exception as eror:
+            return JsonResponse({"status": "error", "message": f"Something went wrong: str({eror})"})
+        
+    return JsonResponse({"status": "error", "message": "Invalid request method."})
