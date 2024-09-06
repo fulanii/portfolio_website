@@ -27,5 +27,6 @@ jobs:
         env:
           DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
           ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
+          GITHUB_ACTIONS: True 
         run: |
           python manage.py test portfolio.tests.unit
