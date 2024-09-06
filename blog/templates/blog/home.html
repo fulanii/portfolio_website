@@ -17,7 +17,7 @@
 
         <title>Yassine | Blog</title>
     </head>
-    <!-- <style>
+    <style>
         body {
             height: 100vh;
             background: -webkit-linear-gradient(
@@ -36,12 +36,13 @@
             align-items: center;
             font-family: "Teko";
         }
-    </style> -->
+    </style>
     <body>
-
-        {% for blog in blogs %}
-           <li> <a href="/blog/{{blog.slug}}">  {{ blog }}  </a> </li>
-        {% endfor %}
-
+        {% comment %}
+            {% for blog in blogs %}
+            <li> <a href="/blog/{{blog.slug}}">  {{ blog }}  </a> </li>
+            {% endfor %}
+        {% endcomment %}
+        <h1>Coming soon</h1>
     </body>
 </html>
