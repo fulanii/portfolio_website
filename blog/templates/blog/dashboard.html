@@ -33,7 +33,7 @@
 
     <div style="margin-top: 50px;">
         <div class="main-container">
-            <form method="POST" action="{% url 'submit' %}" id="blog-form" enctype="multipart/form-data">
+            <form method="POST" action="{% url 'submit' %}" id="blog-form" enctype="multipart/form-data"  id="form">
                 {% csrf_token %}
                 <div class="mb-3">
                     <label for="title" class="form-label">Blog Title</label>

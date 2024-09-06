@@ -1,0 +1,69 @@
+/* General page styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-blog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.blog-container {
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 800px;
+    width: 100%;
+}
+.blog-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    text-align: center;
+}
+.blog-date {
+    font-size: 1rem;
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.divider {
+    border: none;
+    height: 1px;
+    background-color: #bdc3c7;
+    margin: 20px 0;
+}
+.blog-content {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #34495e;
+    text-align: justify;
+}
+@media (max-width: 768px) {
+    .blog-container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .blog-title {
+        font-size: 2rem;
+    }
+
+    .blog-content {
+        font-size: 1rem;
+    }
+}
+
+
+
+

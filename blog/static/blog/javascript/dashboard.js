@@ -326,6 +326,12 @@ const editorConfig = {
             "tableCellProperties"
         ]
     }
+
+    // contentsCss: "/static/blog/css/post_detail.css",
+    // removeDialogTabs: 'image:advanced;link:advanced', // Optionally remove some advanced options from dialogs
+    // allowedContent: true,  // Allow only specific styles if needed
+    // extraAllowedContent: 'img[!src,alt]; p; h1; h2; h3; a[href]',  // Only allow certain attributes for elements
+    // disallowedContent: 'style',  // Disallow inline styles
 };
 
 let editor;
@@ -337,3 +343,31 @@ ClassicEditor.create(document.querySelector("#editor"), editorConfig)
         console.error(error);
     });
 
+document.getElementById("blog-form").addEventListener("submit", function (event) {
+    const form = event.target;
+
+    // Listen for the form submission and handle it after submission completes
+    form.addEventListener("submit", function () {
+        // Wait for the form submission to complete, then check the response status
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", form.action, true);
+        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                const response = JSON.parse(xhr.responseText);
+                if (response.status === "success") {
+                    // Reset regular form fields
+                    form.reset();
+
+                    // Clear CKEditor content
+                    if (editor) {
+                        editor.setData(""); // Assuming 'editor' is your CKEditor instance
+                    }
+                }
+            }
+        };
+
+        xhr.send(new FormData(form));
+    });
+});

@@ -40,7 +40,7 @@
     <body>
 
         {% for blog in blogs %}
-           <li>{{ blog }}</li>
+           <li> <a href="/blog/{{blog.slug}}">  {{ blog }}  </a> </li>
         {% endfor %}
 
     </body>

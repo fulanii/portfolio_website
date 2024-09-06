@@ -6,5 +6,7 @@ urlpatterns = [
     path("login/", views.blog_login, name="login"),
     path("logout/", views.blog_logout, name="logout"),
     path("dashboard/", views.blog_dashboard, name="dashboard"),
-    path("submit/", views.submit_blog, name="submit")
+    path("submit/", views.submit_blog, name="submit"),
+    path('<slug:slug>/', views.post_detail, name='post_detail'),
+
 ]

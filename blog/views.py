@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
@@ -7,8 +7,6 @@ from django.urls import reverse
 from .models import Blog
 from django.http import JsonResponse
 
-
-# Create your views here.
 def blog_home(request):
     all_blog = Blog.objects.all()
     return render(request, "blog/home.html", {"blogs": all_blog})
@@ -40,7 +38,6 @@ def blog_dashboard(request):
     return render(request, "blog/dashboard.html", {"name": name})
 
 
-
 @require_http_methods(["POST"])
 def submit_blog(request):
     if request.method == "POST":
@@ -54,3 +51,9 @@ def submit_blog(request):
             return JsonResponse({"status": "error", "message": f"Something went wrong: str({eror})"})
         
     return JsonResponse({"status": "error", "message": "Invalid request method."})
+
+
+def post_detail(request, slug):
+    all_blog = Blog.objects.all()
+    blog = get_object_or_404(all_blog, slug=slug)
+    return render(request, 'blog/post_detail.html', {'blog': blog})
