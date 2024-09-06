@@ -85,7 +85,7 @@ DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_HOST = os.getenv("DB_HOST")
 
-if os.getenv("ACTION") == 'True':
+if 'GITHUB_ACTIONS' in os.environ:
     # Use sqlite for ci workflows
     DATABASES = {
         'default': {
