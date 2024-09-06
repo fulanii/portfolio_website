@@ -86,6 +86,7 @@ DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_HOST = os.getenv("DB_HOST")
 
 if os.getenv("ACTION") == 'True':
+    # Use sqlite for ci workflows
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
