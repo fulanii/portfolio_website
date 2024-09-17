@@ -17,21 +17,6 @@ export function toggleNavbar() {
         icon.classList.add("bi-x");
     }
 }
-// Ensure that the display style is reset based on the viewport width
-window.addEventListener("resize", () => {
-    const header = document.getElementById("header");
-    const icon = document.querySelector(".header__nav__icon");
-
-    // change 775 later
-    if (window.innerWidth > 775) {
-        header.removeAttribute("style");
-    }
-    // change 775 later
-    if (window.innerWidth <= 775 && getComputedStyle(header).display === "none") {
-        icon.classList.remove("bi-x");
-        icon.classList.add("bi-list");
-    }
-});
 
 // Active nav item on scroll
 export function setActiveNavItem() {
@@ -57,3 +42,17 @@ export function setupNavItemClicks() {
         });
     });
 }
+
+// Ensure that the display style is reset based on the viewport width
+window.addEventListener("resize", () => {
+    const header = document.getElementById("header");
+    const icon = document.querySelector(".header__nav__icon");
+
+    if (window.innerWidth > 775) {
+        header.removeAttribute("style");
+    }
+    if (window.innerWidth <= 775 && getComputedStyle(header).display === "none") {
+        icon.classList.remove("bi-x");
+        icon.classList.add("bi-list");
+    }
+});
