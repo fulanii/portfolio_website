@@ -3,8 +3,8 @@
     --black-text-color: #000000;
     --white-text-color: #fff;
     --btn-color: #0563bb;
-    --nav-icon-color: #c40c0c;
-    --my-red-color: #c40c0c;
+    --nav-icon-color: #ff0a0a; /* c40c0c; */
+    --my-red-color: #ff0a0a; /* c40c0c; */
     --under-line-thickness: 8px;
 }
 
