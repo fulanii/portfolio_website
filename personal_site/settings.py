@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "portfolio", # or portfolio.apps.PortfolioConfig
     "blog",
+    'tinymce',
 ]
 
 MIDDLEWARE = [
