@@ -1,11 +1,12 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from django.utils.text import slugify
+from tinymce.models import HTMLField
 
 class Blog(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, max_length=255, null=True, blank=True)
-    content = RichTextField()
+    content = HTMLField()
     date_posted = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
 
