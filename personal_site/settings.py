@@ -189,3 +189,19 @@ if os.getenv("ENIVIRONMENT") == "production":
         },
     },
 }
+    
+TINYMCE_DEFAULT_CONFIG = {
+    'height': 500,
+    'width': 800,
+    'plugins': 'code table image link media',  # Add more plugins as needed
+    'toolbar': 'undo redo | formatselect | bold italic | alignleft aligncenter alignright | code table | link image media',
+    'menubar': True,
+    'content_css': '/static/blog/css/custom_styles.css',  # Add custom CSS for content
+    'branding': False,  # Remove the TinyMCE branding
+    'image_advtab': True,  # Enable advanced tab for image plugin
+    'image_caption': True,  # Enable captions for images
+    'image_title': True,  # Enable title field in the image dialog
+    'image_class_list': [
+        {'title': 'Responsive', 'value': 'img-responsive'},  # Custom classes for images
+    ],
+}
