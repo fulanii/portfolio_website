@@ -40,21 +40,6 @@ body {
     height: 100vh;
 }
 
-h1 {
-    font-size: 2.5em; /* Large heading */
-    font-weight: 700; /* Bold */
-}
-
-h2 {
-    font-size: 2em; /* Sub-heading */
-    font-weight: 600; /* Semi-bold */
-}
-
-h3 {
-    font-size: 1.75em; /* Smaller sub-heading */
-    font-weight: 600; /* Semi-bold */
-}
-
 img {
     max-width: 100%;
     height: auto; /* This ensures the height scales with the width */
