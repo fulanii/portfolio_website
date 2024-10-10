@@ -32,28 +32,7 @@ def blog_logout(request):
     return redirect('login')
 
 
-@login_required
-def blog_dashboard(request):
-    name = request.session.get('name')
-    return render(request, "blog/dashboard.html", {"name": name})
-
-
-@require_http_methods(["POST"])
-def submit_blog(request):
-    if request.method == "POST":
-        title = request.POST.get('title')
-        content = request.POST.get('content')  # This contains the HTML from CKEditor
-
-        try:
-            Blog.objects.create(title=title, content=content)
-            return JsonResponse({"status": "success", "message": "Blog published successfully!"})
-        except Exception as eror:
-            return JsonResponse({"status": "error", "message": f"Something went wrong: str({eror})"})
-        
-    return JsonResponse({"status": "error", "message": "Invalid request method."})
-
-
 def post_detail(request, slug):
     all_blog = Blog.objects.all()
     blog = get_object_or_404(all_blog, slug=slug)
-    return render(request, 'blog/post_detail.html', {'blog': blog})
+    return render(request, 'blog/post_detail.html', {'blog': blog, "year": 2024})
