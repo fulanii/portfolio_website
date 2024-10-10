@@ -1,0 +1,27 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+body {
+    color: black;
+}
+li {
+    list-style: none;
+    border: solid;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li:hover {
+    background-color: #0563bb;
+    color: #fff;
+}
