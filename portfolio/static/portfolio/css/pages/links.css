@@ -10,14 +10,9 @@
 }
 
 .links-div {
-    margin-top: 100px;
+    margin-top: 50px;
     text-align: center;
     min-width: 650px;
-}
-
-.links-username {
-    font-weight: 700;
-    font-size: 50px;
 }
 
 .links-ul {
@@ -48,16 +43,22 @@
     align-items: center;
 }
 
-/* .link img {
-    height: 25px;
-    margin-right: 5px;
-} */
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.links-username {
+    margin: 0 0 50px 0;
+    font-size: 25px;
+    margin-top: 10px;
+}
 
 .links-icon {
     height: 25px;
     /* margin-right: 20px; */
 }
-.link-p{
+.link-p {
     margin: 0; /* Remove default margins */
     font-size: 1rem; /* Uniform font size */
     line-height: 1.2; /* Set a consistent line-height */

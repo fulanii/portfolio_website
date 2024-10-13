@@ -14,7 +14,8 @@
     <body id="links-body">
         <section id="links">
             <div class="links-div">
-                <!-- <h1 class="links-username">@Yassine</h1> -->
+                <img src=" {% static 'portfolio/images/profile.jpg' %} " alt="" class="profile-pic">
+                <p class="links-username">@yassine</p>
                 
                 <div class="links-ul">
                     {% for i in url_data %}
@@ -32,9 +33,5 @@
             </div>
         </section>
 
-        <script
-            type="module"
-            src="{% static 'portfolio/javascript/utils/responsiveLinks.js' %}"
-        ></script>
     </body>
 </html>
