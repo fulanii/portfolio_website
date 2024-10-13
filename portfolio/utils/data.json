@@ -1,18 +1,30 @@
 [
     {
-        "name": "GitHub",
-        "url": "https://github.com/fulanii"
+        "name": "Blog",
+        "url": "https://www.yassineissoufou.com/blog/"
     },
     {
-        "name": "Twitter | X",
-        "url": "https://x.com/yassine_dev"
+        "name": "GitHub",
+        "url": "https://github.com/fulanii"
     },
     {
         "name": "LinkedIn",
         "url": "https://www.linkedin.com/in/yassine-issoufou/"
     },
     {
-        "name": "Blog",
-        "url": "https://www.yassineissoufou.com/blog/"
+        "name": "Twitter | X",
+        "url": "https://x.com/yassinecodes"
+    },
+    {
+        "name": "Instagram",
+        "url": "https://www.instagram.com/yassinecodes/"
+    },
+    {
+        "name": "TikTok",
+        "url": "https://www.tiktok.com/@yassinecodes"
+    },
+    {
+        "name": "Youtube",
+        "url": "https://www.youtube.com/@yassinecodes"
     }
 ]
