@@ -16,7 +16,8 @@ def index(request):
 
 def resume(request):
     file_path = finders.find('portfolio/files/resume.pdf')
-    return FileResponse(open(file_path, 'rb'), content_type='application/pdf')
+    # return FileResponse(open(file_path, 'rb'), content_type='application/pdf')
+    return render(request, "portfolio/coming_soon.html")
 
 def links(request):
     context = {
