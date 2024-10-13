@@ -1,30 +1,42 @@
 [
     {
         "name": "Blog",
-        "url": "https://www.yassineissoufou.com/blog/"
+        "url": "https://www.yassineissoufou.com/blog/",
+        "icon": "blog.svg"
     },
     {
         "name": "GitHub",
-        "url": "https://github.com/fulanii"
+        "url": "https://github.com/fulanii",
+        "icon": "github.svg"
     },
     {
         "name": "LinkedIn",
-        "url": "https://www.linkedin.com/in/yassine-issoufou/"
+        "url": "https://www.linkedin.com/in/yassine-issoufou/",
+        "icon": "linkedIn.svg"
     },
     {
         "name": "Twitter | X",
-        "url": "https://x.com/yassinecodes"
+        "url": "https://x.com/yassinecodes",
+        "icon": "x.svg"
     },
     {
         "name": "Instagram",
-        "url": "https://www.instagram.com/yassinecodes/"
+        "url": "https://www.instagram.com/yassinecodes/",
+        "icon": "ig.svg"
     },
     {
         "name": "TikTok",
-        "url": "https://www.tiktok.com/@yassinecodes"
+        "url": "https://www.tiktok.com/@yassinecodes",
+        "icon": "tiktok.svg"
     },
     {
         "name": "Youtube",
-        "url": "https://www.youtube.com/@yassinecodes"
+        "url": "https://www.youtube.com/@yassinecodes",
+        "icon": "yt.svg"
+    },
+    {
+        "name": "Discord",
+        "url": "https://discord.gg/AEAWFd5DXp",
+        "icon": "discord.svg"
     }
 ]

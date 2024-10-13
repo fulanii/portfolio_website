@@ -19,11 +19,13 @@
                 <div class="links-ul">
                     {% for i in url_data %}
                         <a href=" {{ i.url }}" class="links-li" target="_blank">
-                            {{ i.name }}
+                            <img src="{% static 'portfolio/images/' %}{{ i.icon }}" class="links-icon">
+                            <p class="link-p">{{ i.name }}</p>
                         </a>
                     {% endfor %}
                     <a href="mailto:yassine@yassineissoufou.com" class="links-li">
-                        Email
+                        <img src="{% static 'portfolio/images/email.svg' %}" class="links-icon">
+                        <p class="link-p">Email</p>
                     </a>                   
                 </div>
 
