@@ -26,4 +26,5 @@ def links(request):
     return render(request, "portfolio/links.html", context)
 
 def hire(request):
-    return render(request, "portfolio/hire.html")
+    # return render(request, "portfolio/hire.html")
+    return render(request, "portfolio/coming_soon.html")
