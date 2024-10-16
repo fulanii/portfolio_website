@@ -24,3 +24,6 @@ def links(request):
         "url_data": read_data(),
     }
     return render(request, "portfolio/links.html", context)
+
+def hire(request):
+    return render(request, "portfolio/hire.html")
