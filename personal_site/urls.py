@@ -16,21 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.contrib.sitemaps.views import sitemap
-from blog.sitemaps import BlogSitemap  
+
 
 import os
 from dotenv import load_dotenv
 load_dotenv()
 
 ADMIN = os.getenv("ADMIN_LINK")
-sitemaps = {
-    'blog': BlogSitemap,  # Register the sitemap
-}
+
 
 urlpatterns = [
     path(f'{ADMIN}/', admin.site.urls),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path("", include("portfolio.urls")),
     path("blog/", include("blog.urls")),
     path('tinymce/', include('tinymce.urls')),
