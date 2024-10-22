@@ -1,2 +1,4 @@
 User-agent: * 
-Disallow:
+Disallow: /
+Allow: /blog/
+Sitemap: https://www.yassineissoufou.com/sitemap.xml
