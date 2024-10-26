@@ -7,21 +7,22 @@
     align-items: center;
 }
 body {
-    color: black;
+    background-color: #1f2933;
+    color: #fff;
+
 }
 li {
     list-style: none;
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
-
     display: flex;
     align-items: center;
     gap: 5px;
 }
 a {
     text-decoration: none;
-    color: black;
+    color: #fff;
 }
 
 li:hover {
