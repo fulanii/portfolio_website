@@ -31,11 +31,17 @@
     </head>
 
     <body>
-        <div class="container">
-            <div class="articles">
-                {% for blog in blogs %}
-                    <a href="/blog/{{blog.slug}}">  <li> <i class="bi bi-journal-text"></i>  {{ blog }} </li> </a>
-                {% endfor %}
+        <div id="main">
+            <div class="container">
+                <a href="{% url 'home' %}" class="home-btn">
+                    <i class="bi bi-house"></i>
+                    Home
+                </a>
+                <div class="articles">
+                    {% for blog in blogs %}
+                        <a href="/blog/{{blog.slug}}">  <li> <i class="bi bi-journal-text"></i>  {{ blog }} </li> </a>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </body>
