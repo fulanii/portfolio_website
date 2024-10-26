@@ -30,3 +30,4 @@ build/
 *.sublime-workspace
 error.log
 db.json
+nginx-config.txt
