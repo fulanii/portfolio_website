@@ -17,7 +17,7 @@ body {
     font-family: "Roboto", sans-serif;
     font-weight: 200;
 }
-i{
+i {
     color: #0863bb;
 }
 #main {
@@ -55,7 +55,7 @@ a {
 li:hover {
     background-color: #0563bb;
     color: #fff;
-    i{
+    i {
         color: #fff;
     }
 }
