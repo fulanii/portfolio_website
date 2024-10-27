@@ -1,7 +1,7 @@
 [
     {
         "name": "Blog",
-        "url": "https://www.yassinecodes.dev/blog/",
+        "url": "/blog",
         "icon": "blog.svg"
     },
     {
