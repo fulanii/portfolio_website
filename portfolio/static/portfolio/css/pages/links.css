@@ -54,6 +54,11 @@
     font-size: 25px;
     margin-top: 10px;
 }
+.links-username:hover{
+    .link-a{
+        color: var(--btn-color);
+    }
+}
 
 .links-icon {
     height: 25px;

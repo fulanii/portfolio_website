@@ -19,12 +19,14 @@
     <body id="links-body">
         <section id="links">
             <div class="links-div">
-                <img
+                <a href="/home">
+                    <img
                     src=" {% static 'portfolio/images/profile.jpg' %} "
                     alt=""
                     class="profile-pic"
                 />
-                <p class="links-username">@yassine</p>
+                </a>
+                <p class="links-username"><a class="link-a" href="/home" >@yassine</a></p>
 
                 <div class="links-ul">
                     {% for i in url_data %}
