@@ -1,8 +1,13 @@
 [
     {
-        "name": "Blog",
-        "url": "/blog",
-        "icon": "blog.svg"
+        "name": "Hire me",
+        "url": "/hire",
+        "icon": "hire.svg"
+    },
+    {
+        "name": "Twitter | X",
+        "url": "https://x.com/yassinecodes",
+        "icon": "x.svg"
     },
     {
         "name": "GitHub",
@@ -15,9 +20,14 @@
         "icon": "linkedIn.svg"
     },
     {
-        "name": "Twitter | X",
-        "url": "https://x.com/yassinecodes",
-        "icon": "x.svg"
+        "name": "Blog",
+        "url": "/blog",
+        "icon": "blog.svg"
+    },
+    {
+        "name": "Youtube",
+        "url": "https://www.youtube.com/@yassinecodes",
+        "icon": "yt.svg"
     },
     {
         "name": "Instagram",
@@ -28,11 +38,6 @@
         "name": "TikTok",
         "url": "https://www.tiktok.com/@yassinecodes",
         "icon": "tiktok.svg"
-    },
-    {
-        "name": "Youtube",
-        "url": "https://www.youtube.com/@yassinecodes",
-        "icon": "yt.svg"
     },
     {
         "name": "Discord",

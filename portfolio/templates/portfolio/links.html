@@ -10,28 +10,38 @@
         <link rel="stylesheet" href="{% static 'portfolio/css/base/reset.css' %}" />
         <link rel="stylesheet" href="{% static 'portfolio/css/base/base.css' %}" />
         <link rel="stylesheet" href="{% static 'portfolio/css/pages/links.css' %}" />
+        <!-- additional  fonts, icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
     </head>
     <body id="links-body">
         <section id="links">
             <div class="links-div">
-                <img src=" {% static 'portfolio/images/profile.jpg' %} " alt="" class="profile-pic">
+                <img
+                    src=" {% static 'portfolio/images/profile.jpg' %} "
+                    alt=""
+                    class="profile-pic"
+                />
                 <p class="links-username">@yassine</p>
-                
+
                 <div class="links-ul">
                     {% for i in url_data %}
                         <a href=" {{ i.url }}" class="links-li" target="_blank">
-                            <img src="{% static 'portfolio/images/' %}{{ i.icon }}" class="links-icon">
+                            <img
+                                src="{% static 'portfolio/images/' %}{{ i.icon }}"
+                                class="links-icon"
+                            />
                             <p class="link-p">{{ i.name }}</p>
                         </a>
                     {% endfor %}
                     <a href="mailto:yassine@yassineissoufou.com" class="links-li">
-                        <img src="{% static 'portfolio/images/email.svg' %}" class="links-icon">
+                        <img src="{% static 'portfolio/images/email.svg' %}" class="links-icon" />
                         <p class="link-p">Email</p>
-                    </a>                   
+                    </a>
                 </div>
-
             </div>
         </section>
-
     </body>
 </html>
