@@ -18,7 +18,8 @@
     z-index: 1;
 }
 .icon-a {
-    color: var(--nav-icon-color);
+    /* color: var(--nav-icon-color); */
+    color: black;
 }
 /* ------------------------------------------------------------------------- */
 
@@ -35,7 +36,7 @@
     font-size: 150px;
 }
 
-.hero__job-title{
+.hero__job-title {
     font-size: 50px;
 }
 
@@ -43,7 +44,7 @@
     border-right: 2px solid black; /* Cursor effect */
     white-space: nowrap;
     overflow: hidden;
-    text-decoration: underline var(--my-red-color);
+    /* text-decoration: underline; */
 
     /* text-decoration-thickness: var(--under-line-thickness); */
 }
@@ -59,7 +60,8 @@
     margin: 10px 30px 0 0;
 }
 .social__a {
-    color: var(--my-red-color);
+    /* color: var(--my-red-color); */
+    color: black;
 }
 .social__a:hover {
     color: var(--black-text-color);
@@ -104,16 +106,16 @@
 /* Hero media queries */
 /* Hero media queries */
 @media (max-width: 1130px) {
-    #hero{
+    #hero {
         justify-content: center;
     }
-    .hero__my-name{
+    .hero__my-name {
         font-size: 120px;
     }
-    .hero__job-title{
+    .hero__job-title {
         font-size: 40px;
     }
-    .social__li{
+    .social__li {
         font-size: 25px;
     }
 }
@@ -121,55 +123,52 @@
     #hero {
         justify-content: flex-start;
     }
-    .hero__my-name{
+    .hero__my-name {
         font-size: 100px;
-
     }
-    .hero__job-title{
-        font-size: 30px
+    .hero__job-title {
+        font-size: 30px;
     }
-    .social__li{
-        font-size: 20px
+    .social__li {
+        font-size: 20px;
     }
-
 }
-@media (max-width: 850px){
-    .hero__my-name{
+@media (max-width: 850px) {
+    .hero__my-name {
         font-size: 80px;
     }
-    .hero__job-title{
-        font-size: 25px
+    .hero__job-title {
+        font-size: 25px;
     }
-    .social__li{
-        font-size: 15px
+    .social__li {
+        font-size: 15px;
     }
 }
-@media (max-width: 775px){
+@media (max-width: 775px) {
     #hero {
         margin-left: 0;
         justify-content: center;
     }
 }
-@media (max-width: 490px){
-
-    .hero__my-name{
+@media (max-width: 490px) {
+    .hero__my-name {
         font-size: 50px;
     }
-    .hero__job-title{
-        font-size: 20px
+    .hero__job-title {
+        font-size: 20px;
     }
-    .social__li{
-        font-size: 15px
+    .social__li {
+        font-size: 15px;
     }
 }
-@media (max-width: 320px){
-    .hero__my-name{
+@media (max-width: 320px) {
+    .hero__my-name {
         font-size: 30px;
     }
-    .hero__job-title{
-        font-size: 25px
+    .hero__job-title {
+        font-size: 25px;
     }
-    .social__li{
-        font-size: 10px
+    .social__li {
+        font-size: 10px;
     }
 }
