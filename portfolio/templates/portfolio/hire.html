@@ -1,21 +1,75 @@
-{% load static %}
+{% extends "portfolio/base.html" %} {% load static %} {% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Yassie | For Hire</title>
-        <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="{% static 'portfolio/images/favicon.ico' %}" />
-        <!-- css -->
-        <link rel="stylesheet" href="{% static 'portfolio/css/base/reset.css' %}" />
-        <link rel="stylesheet" href="{% static 'portfolio/css/pages/hire.css' %}" />
+<main id="hire">
+    <div class="header__icon">
+        <a href="javascript:void(0);" class="icon-a">
+            <i class="header__nav__icon bi bi-list"></i>
+        </a>
+    </div>
 
-    </head>
-    <body>
-       <header>
+    <section id="services-section">
+        <div class="cover">
+            <!-- <h1 class="services-h1">My Services</h1> -->
+            <p class="section_title">Service Provided</p>
+        </div>
+        <div class="line-div">
+            <span class="line"> </span>
+        </div>
+        <!-- <p class="section_title">Service Provided</p> -->
+
+        <div class="services">
+            <div class="service-card">
+                <img src="{% static 'portfolio/images/api-icon.svg' %}" alt="" style="height: 100px;" class="service-image">
+                <h3 class="service-title">Backend & Fullstack Development</h3>
+                <p class="service-description">High-quality backend solutions to power your applications and ensure smooth performance.</p>
+                <!-- <a href="#contact" class="service-button">Learn More</a> -->
+            </div>
+
+            <div class="service-card">
+                <img src="{% static 'portfolio/images/scraping-icon.svg' %}" alt="" style="height: 100px;" class="service-image">
+                <h3 class="service-title">Web Scraping</h3>
+                <p class="service-description">High-quality backend solutions to power your applications and ensure smooth performance.</p>
+                <!-- <a href="#contact" class="service-button">Learn More</a> -->
+            </div>
+
+            <div class="service-card">
+                <img src="{% static 'portfolio/images/data-auto-icon.svg' %}" alt="" style="height: 100px;" class="service-image">
+                <h3 class="service-title">Data Automation</h3>
+                <p class="service-description">High-quality backend solutions to power your applications and ensure smooth performance.</p>
+                <!-- <a href="#contact" class="service-button">Learn More</a> -->
+            </div>
+
+            <div class="service-card">
+                <img src="{% static 'portfolio/images/buss-auto-icon.svg' %}" alt="" style="height: 100px;" class="service-image">
+                <h3 class="service-title">Automation of Business Processes</h3>
+                <p class="service-description">High-quality backend solutions to power your applications and ensure smooth performance.</p>
+                <!-- <a href="#contact" class="service-button">Learn More</a> -->
+            </div>
+
+            <div class="service-card">
+                <img src="{% static 'portfolio/images/tool-icon.svg' %}" alt="" style="height: 100px;" class="service-image">
+                <h3 class="service-title">Custom Tool Development</h3>
+                <p class="service-description">High-quality backend solutions to power your applications and ensure smooth performance.</p>
+                <!-- <a href="#contact" class="service-button">Learn More</a> -->
+            </div>
+
+            <div class="service-card">
+                <img src="{% static 'portfolio/images/saas-icon.svg' %}" alt="" style="height: 100px;" class="service-image">
+                <h3 class="service-title">SAAS Development</h3>
+                <p class="service-description">High-quality backend solutions to power your applications and ensure smooth performance.</p>
+                <!-- <a href="#contact" class="service-button">Learn More</a> -->
+            </div>
+
+        </div>
+
         
-       </header>
-    </body>
-</html>
+
+    </section>
+    <!-- <section id="about-me">
+        <h1 class="about-me-h1">About Me</h1>
+    </section>
+    <section id="contact-me">
+        <h1 class="contact-me-h1">Contact Me</h1>
+    </section> -->
+</main>
+{% endblock %}

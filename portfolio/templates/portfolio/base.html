@@ -34,19 +34,19 @@
         <header id="header">
             <nav id="header-nav" aria-label="Main Navigation">
                 <ul class="nav__list">
-                    <a href="" class="nav__link">
+                    <a href="{% url 'home' %}#hero" class="nav__link">
                         <li class="nav__item home-li">
                             <i class="bi bi-house navicon i__icon"></i>
                             <span class="nav__span home-span">Home</span>
                         </li>
                     </a>
-                    <a href="" class="nav__link skills-li">
+                    <a href="{% url 'home' %}#skills" class="nav__link skills-li">
                         <li class="nav__item ">
                             <i class="bi bi-braces i__icon"></i>
                             <span class="nav__span skills-span">Skills</span>
                         </li>
                     </a>
-                    <a href="" class="nav__link">
+                    <a href="{% url 'home' %}#projects" class="nav__link">
                         <li class="nav__item projects-li">
                             <i class="bi bi-code-slash i__icon"></i>
                             <span class="nav__span projects-span">Projects</span>
@@ -68,7 +68,9 @@
             </nav>
         </header>
 
-        {% block content %} {% endblock %}
+        {% block content %} 
+        
+        {% endblock %}
 
         <footer id="footer">
             <h1 class="footer__h1">&copy; {{year}} Yassine. All rights reserved.</h1>
@@ -82,6 +84,7 @@
         <script src="https://kit.fontawesome.com/04840efe8b.js" crossorigin="anonymous"></script>
         <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
         <script type="module" src="{% static 'portfolio/javascript/script.js' %}"></script>
+        {% block scrop_script %} {% endblock %}
     </body>
 
 </html>

@@ -1,7 +1,5 @@
 import { toggleNavbar, setActiveNavItem, setupNavItemClicks } from "./components/navbar.js";
 import { typewriterEffect } from "./utils/typewriter.js";
-import { smoothScroll } from "./utils/smoothScroll.js";
-
 
 document.addEventListener("DOMContentLoaded", () => {
     // Navbar toggle
@@ -17,9 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Setup nav item click events
     setupNavItemClicks();
-
-    // smooth scrolling
-    smoothScroll();
 
     // AOS animation
     AOS.init();

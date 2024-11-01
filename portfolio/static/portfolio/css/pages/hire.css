@@ -1,0 +1,106 @@
+/* global style */
+
+/* main */
+#hire {
+    margin-left: 250px;
+    /* height: 100vh; */
+    background-color: white;
+    font-family: "Open Sans", sans-serif;
+}
+/* About Me section */
+/* About Me section */
+
+/* About Me ^^^ section */
+/* About Me ^^^ section */
+
+/* Services section */
+/* Services section */
+#services-section {
+    text-align: center;
+}
+.cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url("/static/portfolio/images/hire_hero_bg.webp"); */
+    background: hsla(270, 94%, 25%, 1);
+    background: linear-gradient(90deg, hsla(270, 94%, 25%, 1) 0%, hsla(158, 94%, 49%, 1) 100%);
+    padding: 100px;
+    height: 400px;
+    max-height: 400px;
+}
+.services-h1 {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 0;
+    margin: 0;
+}
+.line-div {
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    margin-top: 50px;
+}
+.line {
+    /* position: absolute; */
+    /* bottom: 64%; */
+    /* content: ""; */
+    height: 60px;
+    width: 1px;
+    background: #615cfd;
+}
+.section_title {
+    margin-top: 5px;
+    font-size: 50px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: #001d38;
+    text-transform: uppercase;
+}
+.services {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+.service-card {
+    margin: 50px;
+    max-width: 300px;
+    /* border: solid red; */
+}
+.service-image {
+}
+.service-title {
+}
+.service-description {
+    margin: 20px 0 20px 0;
+    color: black; /* c #727272; */
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+}
+.service-button {
+    border: solid black;
+    padding: 5px;
+    background-color: var(--btn-color);
+}
+/* Services ^^^ section */
+/* Services ^^^ section */
+
+/* Contact Me section */
+/* Contact Me section */
+
+/* Contact Me ^^^ section */
+/* Contact Me ^^^ section */
+
+/* Media queries */
+/* Media queries */
+@media (max-width: 775px) {
+    #hire {
+        margin-left: 0;
+        justify-content: center;
+    }
+}
+/* Media ^^^ queries */
+/* Media ^^^ queries */
