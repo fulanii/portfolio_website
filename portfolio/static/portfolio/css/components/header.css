@@ -34,7 +34,8 @@
     transition: background-color 0.3s ease;
 }
 .nav__link {
-    color: var(--black-text-color);
+    /* color: var(--black-text-color); */
+    color: black;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -68,7 +69,8 @@
     width: 20%;
 }
 .i__icon {
-    color: var(--nav-icon-color)
+    /* color: var(--nav-icon-color) */
+    color: black;
 }
 .header__icon {
     display: none;

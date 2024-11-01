@@ -43,7 +43,7 @@
     border-right: 2px solid black; /* Cursor effect */
     white-space: nowrap;
     overflow: hidden;
-    text-decoration: underline var(--my-red-color);
+    /* text-decoration: underline; */
 
     /* text-decoration-thickness: var(--under-line-thickness); */
 }
@@ -59,7 +59,8 @@
     margin: 10px 30px 0 0;
 }
 .social__a {
-    color: var(--my-red-color);
+    /* color: var(--my-red-color); */
+    color: black;
 }
 .social__a:hover {
     color: var(--black-text-color);

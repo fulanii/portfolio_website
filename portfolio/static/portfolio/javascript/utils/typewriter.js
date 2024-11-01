@@ -1,6 +1,6 @@
 
 export function typewriterEffect(element, typeSpeed = 150, eraseSpeed = 100, delayBetweenTitles = 2000) {
-    const jobTitles = ["Solopreneur", "Developer", "Freelancer", "Fullstack Engineer (Backend)"];
+    const jobTitles = ["Solopreneur", "Developer", "Freelancer", "Backend/Fullstack Engineer"];
     let index = 0;
     let isErasing = false;
 
