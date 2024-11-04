@@ -20,13 +20,23 @@
                 </a>
             </li>
             <li class="social__li">
-                <a href="https://x.com/yassine_dev" class="social__a" target="_blank"><i class="social__i bi bi-twitter-x"></i></a>
+                <a href="https://x.com/yassine_dev" class="social__a" target="_blank">
+                    <i class="social__i bi bi-twitter-x"></i>
+                </a>
             </li>
             <li class="social__li">
-                <a href="https://www.linkedin.com/in/yassine-issoufou/" class="social__a" target="_blank"><i class="social__i bi bi-linkedin"></i></a>
+                <a
+                    href="https://www.linkedin.com/in/yassine-issoufou/"
+                    class="social__a"
+                    target="_blank"
+                >
+                    <i class="social__i bi bi-linkedin"></i>
+                </a>
             </li>
             <li class="social__li">
-                <a href="mailto:yassine@yassineissoufou.com" class="social__a"><i class="social__i bi bi-envelope-at"></i></a>
+                <a href="mailto:yassine@yassineissoufou.com" class="social__a">
+                    <i class="social__i bi bi-envelope-at"></i>
+                </a>
             </li>
         </ul>
     </div>
@@ -161,7 +171,10 @@
                     Postman
                 </li> -->
                 <li>
-                    <img src="{% static 'portfolio/images/github_actions.svg' %}" alt="github actions svg">
+                    <img
+                        src="{% static 'portfolio/images/github_actions.svg' %}"
+                        alt="github actions svg"
+                    />
                     Github Actions
                 </li>
                 <li>
@@ -244,8 +257,11 @@
     </div>
 </section>
 
-{% endblock %}
-
-{% block scrop_script %}
-    <script type="module" src="{% static 'portfolio/javascript/utils/smoothScroll.js' %}"></script>
+{% endblock %} 
+{% block home_page_script %}
+<script type="module" defer src="{% static 'portfolio/javascript/script.js' %}"></script>
+<script type="module" defer src="{% static 'portfolio/javascript/utils/smoothScroll.js' %}"></script>
+<script type="module" defer src="{% static 'portfolio/javascript/utils/typewriter.js' %}"></script>
+<script defer src="https://kit.fontawesome.com/04840efe8b.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 {% endblock %}
