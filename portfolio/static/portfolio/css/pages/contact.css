@@ -1,0 +1,61 @@
+.cta-container {
+    text-align: center;
+    margin: 2em auto;
+    padding: 2em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.cta-dropdown {
+    padding: 0.5em;
+    font-size: 1.1em;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 1.5em;
+}
+
+.cta-form {
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+.cta-form.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.cta-form h3 {
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.cta-form label {
+    display: block;
+    margin: 1em 0 0.5em;
+    font-weight: 600;
+    color: #555;
+}
+
+.cta-form textarea,
+.cta-form input {
+    width: 100%;
+    padding: 0.7em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.cta-form button {
+    margin-top: 1em;
+    padding: 0.7em 1.2em;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-form button:hover {
+    background-color: #0056b3;
+}

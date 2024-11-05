@@ -20,7 +20,9 @@
                 </a>
             </li>
             <li class="social__li">
-                <a href="https://x.com/yassinecodes" class="social__a" target="_blank"><i class="social__i bi bi-twitter-x"></i></a>
+                <a href="https://x.com/yassinecodes" class="social__a" target="_blank">
+                    <i class="social__i bi bi-twitter-x"></i>
+                </a>
             </li>
             <li class="social__li">
                 <a
@@ -255,11 +257,80 @@
     </div>
 </section>
 
+<section id="contact">
+    <div class="cta-container">
+        <h2>How can I help you?</h2>
+
+        <!-- Dropdown Selection -->
+        <select id="cta-options" class="cta-dropdown">
+            <option value="" disabled selected>Select an option</option>
+            <option value="question">I have a quick question</option>
+            <option value="recruiter">I'm a recruiter</option>
+            <option value="web-scraping">I'm interested in your web scraping service</option>
+            <option value="rest-api">I'm interested in your REST API development service</option>
+            <option value="web-dev">I'm interested in your web development service</option>
+        </select>
+
+        <!-- Forms (Initially Hidden) -->
+        <div id="form-question" class="cta-form hidden">
+            <h3>Quick Question</h3>
+            <form>
+                <label>Your Question</label>
+                <textarea placeholder="Type your question here..." required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="form-recruiter" class="cta-form hidden">
+            <h3>Recruiter Inquiry</h3>
+            <form>
+                <label>Your Name</label>
+                <input type="text" placeholder="Your name" required />
+                <label>Company</label>
+                <input type="text" placeholder="Your company" required />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="form-web-scraping" class="cta-form hidden">
+            <h3>Web Scraping Service</h3>
+            <form>
+                <label>Describe Your Needs</label>
+                <textarea
+                    placeholder="What kind of data are you looking to scrape?"
+                    required
+                ></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="form-rest-api" class="cta-form hidden">
+            <h3>REST API Development</h3>
+            <form>
+                <label>Describe Your Project</label>
+                <textarea placeholder="Describe the API requirements" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="form-web-dev" class="cta-form hidden">
+            <h3>Web Development Service</h3>
+            <form>
+                <label>Describe Your Project</label>
+                <textarea placeholder="Describe your web development needs" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+
 {% endblock %} 
+
 {% block home_page_script %}
-<script type="module" defer src="{% static 'portfolio/javascript/script.js' %}"></script>
-<script type="module" defer src="{% static 'portfolio/javascript/utils/smoothScroll.js' %}"></script>
-<script type="module" defer src="{% static 'portfolio/javascript/utils/typewriter.js' %}"></script>
-<script defer src="https://kit.fontawesome.com/04840efe8b.js" crossorigin="anonymous"></script>
-<script defer src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <script type="module" defer src="{% static 'portfolio/javascript/script.js' %}"></script>
+    <scr defer src="{% static 'portfolio/javascript/utils/smoothScroll.js' %}"></scr>
+    <script type="module" defer src="{% static 'portfolio/javascript/utils/typewriter.js' %}"></script>
+    <script type="module" defer src="{% static 'portfolio/javascript/components/contact.js' %}"></script>
+    <script defer src="https://kit.fontawesome.com/04840efe8b.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 {% endblock %}

@@ -12,6 +12,9 @@
 
 /* Services section */
 /* Services section */
+#services-section {
+    margin-bottom: 100px;
+}
 .cover {
     display: flex;
     justify-content: center;
