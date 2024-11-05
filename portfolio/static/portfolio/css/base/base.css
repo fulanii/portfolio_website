@@ -10,12 +10,15 @@
 
 html {
     font-size: 100%; /* This sets the font size to the default browser setting, usually 16px */
+    -webkit-text-size-adjust: 100%; /* Prevents auto-resizing text on iOS Safari */
 }
 body {
-    font-size: 1rem; /* This will be 16px */
+    font-size: 16px; /* This will be 16px */
     font-family: "Teko"; /* Roboto Condensed, Zain, Rubik, Open Sans, Teko*/
     color: var(--black-text-color);
     background-color: var(--white-bg-color);
+    max-width: 100%;
+    overflow-x: hidden;
 }
 a {
     text-decoration: none;

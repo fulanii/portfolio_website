@@ -1,20 +1,67 @@
 #contact-me {
     margin: 0 0 0 250px;
+    margin-bottom: 100px;
 }
-
 .cta-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 100px;
+    width: 100%;
+    max-width: 100%;
+}
+.cta-form {
+    display: none;
+    transition: opacity 0.3s ease;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
 }
 
+.form {
+    width: 80%;
+    max-width: 100%;
+}
+.cta-form.hidden {
+    display: none;
+    opacity: 0;
+}
 .cta-dropdown {
     width: 90%;
+    max-width: 100%;
+}
+.cta-form label {
+    display: block;
+    margin: 20px 0 10px;
+    font-weight: 600;
+}
+.cta-form input[type="text"],
+.cta-form input[type="email"],
+.cta-form input[type="number"],
+.cta-form input[type="date"],
+.cta-form textarea {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px; /* this fixed horzirontal scroll for input fields */
+    resize: vertical;
+
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+.cta-form input:focus,
+.cta-form textarea:focus {
+    outline: none;
+    overflow: hidden;
+    max-width: 100%;
 }
 .services-select {
     width: 100%;
+    max-width: 100%;
 }
 select {
     padding: 10px;
@@ -27,28 +74,6 @@ select {
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 30px;
-}
-
-.cta-form {
-    display: none;
-    transition: opacity 0.3s ease;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-.form {
-    width: 80%;
-}
-.cta-form.hidden {
-    display: none;
-    opacity: 0;
-}
-
-.cta-form label {
-    display: block;
-    margin: 20px 0 10px;
-    font-weight: 600;
 }
 
 .cta-form button {
@@ -66,18 +91,6 @@ select {
     background-color: #0056b3;
 }
 
-.cta-form input[type="text"],
-.cta-form input[type="email"],
-.cta-form input[type="number"],
-.cta-form input[type="date"],
-.cta-form textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 15px;
-    resize: vertical;
-}
 .cta-resume {
     margin: 10px 0 10px 0;
     color: var(--btn-color);
@@ -86,9 +99,10 @@ select {
     color: var(--btn-color);
     text-decoration: underline;
 }
+
 /* Media query */
 @media (max-width: 775px) {
     #contact-me {
-        margin: 0;
+        margin: 0 0 100px 0;
     }
 }
