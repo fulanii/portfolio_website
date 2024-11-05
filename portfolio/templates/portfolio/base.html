@@ -40,8 +40,14 @@
                             <span class="nav__span home-span">Home</span>
                         </li>
                     </a>
+                    <a href="{% url 'home' %}#about-me" class="nav__link">
+                        <li class="nav__item i__icon">
+                            <i class="bi bi-file-person i__icon"></i>
+                            <span class="nav__span home-span">About Me</span>
+                        </li>
+                    </a>
                     <a href="{% url 'home' %}#skills" class="nav__link skills-li">
-                        <li class="nav__item ">
+                        <li class="nav__item">
                             <i class="bi bi-braces i__icon"></i>
                             <span class="nav__span skills-span">Skills</span>
                         </li>
@@ -50,6 +56,12 @@
                         <li class="nav__item projects-li">
                             <i class="bi bi-code-slash i__icon"></i>
                             <span class="nav__span projects-span">Projects</span>
+                        </li>
+                    </a>
+                    <a href="{% url 'home' %}#contact-me" class="nav__link">
+                        <li class="nav__item projects-li">
+                            <i class="bi bi-person-lines-fill i__icon"></i>
+                            <span class="nav__span projects-span">Contact Me</span>
                         </li>
                     </a>
                     <a href="{% url 'hire' %}" class="nav__link">
@@ -68,9 +80,7 @@
             </nav>
         </header>
 
-        {% block content %} 
-        
-        {% endblock %}
+        {% block content %} {% endblock %}
 
         <footer id="footer">
             <h1 class="footer__h1">&copy; {{year}} Yassine. All rights reserved.</h1>
@@ -81,10 +91,6 @@
             </a>
         </footer>
 
-
-        
-        {% block home_page_script %} {% endblock %}
-        {% block hire_script %} {% endblock %}
+        {% block home_page_script %} {% endblock %} {% block hire_script %} {% endblock %}
     </body>
-
 </html>

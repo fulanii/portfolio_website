@@ -1,4 +1,3 @@
-
 #projects {
     margin: 0 0 50px 250px;
 }
@@ -85,11 +84,7 @@
 /* Media queries */
 /* Media queries */
 
-@media (max-width: 775px) {
-    #projects {
-        margin: 0 0 50px 0;
-    }
-
+@media (max-width: 1000px) {
     .timeline-item {
         flex-direction: column;
     }
@@ -107,7 +102,11 @@
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 775px) {
+    #projects {
+        margin: 0 0 50px 0;
+    }
+
     .timeline-item {
         flex-direction: column;
     }

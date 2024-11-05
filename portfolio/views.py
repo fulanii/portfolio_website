@@ -28,3 +28,11 @@ def links(request):
 def hire(request):
     # return render(request, "portfolio/hire.html")
     return render(request, "portfolio/hire.html")
+
+def download_file(request, filename="yassinecodes_resume.pdf"):
+    # Define the path to your file, replace with your file's actual path
+    file_path = finders.find('portfolio/files/resume.pdf')
+
+    response = FileResponse(open(file_path, 'rb'))
+    response['Content-Disposition'] = f'attachment; filename="{filename}"'
+    return response

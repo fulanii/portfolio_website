@@ -1,4 +1,4 @@
-export function smoothScroll() {
+function smoothScroll() {
     const allNavItems = document.querySelectorAll(".nav__item");
 
     const heroSection = document.querySelector("#hero");
