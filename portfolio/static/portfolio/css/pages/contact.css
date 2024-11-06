@@ -1,6 +1,7 @@
 #contact-me {
     margin: 0 0 0 250px;
     margin-bottom: 100px;
+    font-family: "Open Sans", sans-serif;
 }
 .cta-container {
     display: flex;
@@ -27,6 +28,9 @@
 .cta-form.hidden {
     display: none;
     opacity: 0;
+}
+.hidden {
+    display: none;
 }
 .cta-dropdown {
     width: 90%;
@@ -77,14 +81,22 @@ select {
 }
 
 .cta-form button {
-    margin-top: 10px;
+    /* 
     padding: 10px 10px;
     background-color: #007bff;
-    color: #fff;
+    color: black;
     border: none;
     border-radius: 5px;
+    transition: background-color 0.3s ease; */
+
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    background: var(--btn-color);
+    color: var(--black-text-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
 .cta-form button:hover {

@@ -7,7 +7,6 @@
     --my-red-color: #ff0a0a; /* c40c0c; */
     --under-line-thickness: 8px;
 }
-
 html {
     font-size: 100%; /* This sets the font size to the default browser setting, usually 16px */
     -webkit-text-size-adjust: 100%; /* Prevents auto-resizing text on iOS Safari */

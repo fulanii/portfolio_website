@@ -262,6 +262,8 @@
 </section>
 
 <section id="contact-me">
+
+    {{ success }}
     <div class="cta-container">
         <h1>How can I help you?</h1>
 
@@ -275,7 +277,8 @@
 
         <!-- Forms (Initially Hidden) -->
         <div id="form-question" class="cta-form hidden">
-            <form class="form">
+            <form class="form q-form" action="/contactforms/" method="POST">
+                {% csrf_token %}
                 <!-- <label for="name">Your Name</label>
                 <input type="text" id="name" name="name" placeholder="Enter your name" required> -->
 
@@ -332,7 +335,9 @@
                 <input type="email" placeholder="Your email" required />
 
                 <label>Budget</label>   
-                <input type="number" placeholder="Your budget $" required>
+                <!-- <input type="number" placeholder="Your budget $" required> -->
+                <input type="number" inputmode="numeric" pattern="[0-9]*" placeholder="Your budget $" />
+
 
                 <label>When you need this</label>   
                 <input type="date" placeholder="In how long you need this done?" style="min-width: 100%;" required>

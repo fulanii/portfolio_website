@@ -1,7 +1,8 @@
-from django.shortcuts import render
-from django.http import HttpResponse, FileResponse
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, FileResponse, JsonResponse
 from django.conf import settings
 from django.contrib.staticfiles import finders
+from django.contrib import messages
 
 import datetime
 import os
@@ -10,8 +11,9 @@ from .utils.main import read_data
 
 def index(request):
     context = {
-        "year":  datetime.datetime.now().year
+        "year":  datetime.datetime.now().year,
     }
+
     return render(request, "portfolio/home.html", context=context)
 
 def resume(request):
@@ -36,3 +38,11 @@ def download_file(request, filename="yassinecodes_resume.pdf"):
     response = FileResponse(open(file_path, 'rb'))
     response['Content-Disposition'] = f'attachment; filename="{filename}"'
     return response
+
+def contact_submit(request):
+    if request.method == 'POST':
+        print(request.POST)
+
+        return JsonResponse({'success': True})
+    
+
