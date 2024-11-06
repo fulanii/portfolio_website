@@ -58,7 +58,10 @@ allForms.forEach(function (indivudualForm) {
                 if (data["success"] === true) {
                     this.reset();
                     alert("Form submitted successfully!"); // Optional success message
+                } else {
+                    alert("Form submitmission failed try again later");
                 }
+
             })
             .catch((error) => {
                 console.error("Error:", error);

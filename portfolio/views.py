@@ -3,6 +3,7 @@ from django.http import HttpResponse, FileResponse, JsonResponse
 from django.conf import settings
 from django.contrib.staticfiles import finders
 from django.contrib import messages
+from django.core.mail import send_mail
 
 import datetime
 import os
@@ -48,15 +49,25 @@ def download_file(request, filename="yassinecodes_resume.pdf"):
 def contact_submit(request):
     if request.method == "POST":
         data = request.POST
+
+        # Set default values for subject and message
+        # subject = "New Contact Form Submission"
+        # message = ""
+
+        # Identify the form and format the email content accordingly
         if "question" in data:
             email = data["email"]
             question = data["question"]
+            subject = "New Question Submitted"
+            message = f"Email: {email}\nQuestion: {question}"
 
         elif "company" in data:
             name = data["name"]
             email = data["email"]
             company = data["company"]
             role = data["role"]
+            subject = "New Recruiter Inquiry"
+            message = f"Name: {name}\nEmail: {email}\nCompany: {company}\nRole: {role}"
 
         elif "services" in data:
             services = data["services"]
@@ -64,8 +75,27 @@ def contact_submit(request):
             email = data["email"]
             budget = data["budget"]
             due_date = data["due-date"]
-            project_descption = data["project-description"]
+            project_description = data["project-description"]
+            subject = "Service Inquiry"
+            message = (
+                f"Service: {services}\nName: {name}\nEmail: {email}\n"
+                f"Budget: ${budget}\nDue Date: {due_date}\nDescription: {project_description}"
+            )
 
-        # next send email using form data
+        # Send the email
+        send_mail(
+            subject,
+            message,
+            settings.EMAIL_HOST_USER,  # From email (the one you set in settings)
+            [
+                "yassine@yassineissoufou.com" # Recipient's email address (replace with the desired recipient)
+            ],  
+            fail_silently=False,
+        )
 
+        # Respond with success
         return JsonResponse({"success": True})
+
+    return JsonResponse(
+        {"success": False, "error": "Invalid request method"}, status=400
+    )
