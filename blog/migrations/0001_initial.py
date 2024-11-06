@@ -8,20 +8,38 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Blog',
+            name="Blog",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=255)),
-                ('slug', models.SlugField(blank=True, max_length=255, null=True, unique=True)),
-                ('content', ckeditor.fields.RichTextField()),
-                ('status', models.CharField(choices=[('draft', 'Draft'), ('publish', 'Publish')], max_length=10)),
-                ('date_posted', models.DateTimeField(auto_now_add=True)),
-                ('last_modified', models.DateTimeField(auto_now=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=255)),
+                (
+                    "slug",
+                    models.SlugField(
+                        blank=True, max_length=255, null=True, unique=True
+                    ),
+                ),
+                ("content", ckeditor.fields.RichTextField()),
+                (
+                    "status",
+                    models.CharField(
+                        choices=[("draft", "Draft"), ("publish", "Publish")],
+                        max_length=10,
+                    ),
+                ),
+                ("date_posted", models.DateTimeField(auto_now_add=True)),
+                ("last_modified", models.DateTimeField(auto_now=True)),
             ],
         ),
     ]

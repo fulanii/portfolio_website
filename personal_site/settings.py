@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -36,48 +37,48 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(",")
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.sitemaps',
-    "portfolio", # or portfolio.apps.PortfolioConfig
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "django.contrib.sitemaps",
+    "portfolio",  # or portfolio.apps.PortfolioConfig
     "blog",
-    'tinymce',
+    "tinymce",
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = 'personal_site.urls'
+ROOT_URLCONF = "personal_site.urls"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [],
         # 'DIRS': [BASE_DIR / "portfolio/templates"],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'personal_site.wsgi.application'
+WSGI_APPLICATION = "personal_site.wsgi.application"
 
 
 # Database
@@ -87,24 +88,24 @@ DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_HOST = os.getenv("DB_HOST")
 
-if 'GITHUB_ACTIONS' in os.environ:
+if "GITHUB_ACTIONS" in os.environ:
     # Use sqlite for ci workflows
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': ':memory:',  # Use in-memory SQLite for CI
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": ":memory:",  # Use in-memory SQLite for CI
         }
     }
 else:
     # Use PostgreSQL for local development and production
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'portfolio',
-            'USER': DB_USER,
-            'PASSWORD': DB_PASSWORD,
-            'HOST': DB_HOST,  # or your production server IP
-            'PORT': '5432',
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "portfolio",
+            "USER": DB_USER,
+            "PASSWORD": DB_PASSWORD,
+            "HOST": DB_HOST,  # or your production server IP
+            "PORT": "5432",
         }
     }
 
@@ -114,16 +115,16 @@ else:
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
 
@@ -131,9 +132,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = "America/Chicago"
 
 USE_I18N = True
 
@@ -143,14 +144,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# STATICFILES_DIRS = [BASE_DIR / "portfolio/static"] 
+STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+# STATICFILES_DIRS = [BASE_DIR / "portfolio/static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 if os.getenv("ENVIRONMENT") == "production":
     # HTTP Settings
@@ -159,7 +160,7 @@ if os.getenv("ENVIRONMENT") == "production":
     SECURE_SSL_REDIRECT = True
 
     # HSTS settings
-    SECURE_HSTS_SECONDS = 31536000 # 1 year
+    SECURE_HSTS_SECONDS = 31536000  # 1 year
     SECURE_HSTS_PRELOAD = True
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 elif os.getenv("ENVIRONMENT") == "development":
@@ -173,44 +174,44 @@ LOGIN_REDIRECT_URL = os.getenv("LOGIN_REDIRECT_URL")
 
 if os.getenv("ENIVIRONMENT") == "production":
     LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'ERROR',
-            'class': 'logging.FileHandler',
-            'filename': 'error.log',
+        "version": 1,
+        "disable_existing_loggers": False,
+        "handlers": {
+            "file": {
+                "level": "ERROR",
+                "class": "logging.FileHandler",
+                "filename": "error.log",
+            },
         },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'ERROR',
-            'propagate': True,
+        "loggers": {
+            "django": {
+                "handlers": ["file"],
+                "level": "ERROR",
+                "propagate": True,
+            },
         },
-    },
-}
-    
+    }
+
 TINYMCE_DEFAULT_CONFIG = {
-    'height': 500,
-    'width': 800,
-    'plugins': 'code table image link media codesample code paste',  # Add more plugins as needed
-    'toolbar': 'undo redo | formatselect | bold italic | alignleft aligncenter alignright | code table | link image media',
-    'menubar': True,
-    'content_css': '/static/blog/css/custom_styles.css',  # Add custom CSS for content
-    'branding': False,  # Remove the TinyMCE branding
-    'image_advtab': True,  # Enable advanced tab for image plugin
-    'image_caption': True,  # Enable captions for images
-    'image_title': True,  # Enable title field in the image dialog
-    'image_class_list': [
-        {'title': 'Responsive', 'value': 'img-responsive'},  # Custom classes for images
+    "height": 500,
+    "width": 800,
+    "plugins": "code table image link media codesample code paste",  # Add more plugins as needed
+    "toolbar": "undo redo | formatselect | bold italic | alignleft aligncenter alignright | code table | link image media",
+    "menubar": True,
+    "content_css": "/static/blog/css/custom_styles.css",  # Add custom CSS for content
+    "branding": False,  # Remove the TinyMCE branding
+    "image_advtab": True,  # Enable advanced tab for image plugin
+    "image_caption": True,  # Enable captions for images
+    "image_title": True,  # Enable title field in the image dialog
+    "image_class_list": [
+        {"title": "Responsive", "value": "img-responsive"},  # Custom classes for images
     ],
-    'codesample_languages': [
-        {'text': 'Python', 'value': 'python'},
-        {'text': 'JavaScript', 'value': 'javascript'},
-        {'text': 'HTML/XML', 'value': 'markup'},
-        {'text': 'CSS', 'value': 'css'},
-        {'text': 'Bash', 'value': 'bash'},
-        {'text': 'JSON', 'value': 'json'}
-    ]
+    "codesample_languages": [
+        {"text": "Python", "value": "python"},
+        {"text": "JavaScript", "value": "javascript"},
+        {"text": "HTML/XML", "value": "markup"},
+        {"text": "CSS", "value": "css"},
+        {"text": "Bash", "value": "bash"},
+        {"text": "JSON", "value": "json"},
+    ],
 }

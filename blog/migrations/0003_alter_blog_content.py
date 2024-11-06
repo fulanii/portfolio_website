@@ -7,13 +7,13 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0002_remove_blog_status'),
+        ("blog", "0002_remove_blog_status"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='blog',
-            name='content',
+            model_name="blog",
+            name="content",
             field=tinymce.models.HTMLField(),
         ),
     ]
