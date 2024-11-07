@@ -15,31 +15,6 @@ document.getElementById("cta-options").addEventListener("change", function (even
     }
 });
 
-// questionForm.addEventListener("submit", function (event) {
-//     event.preventDefault();
-//     fetch(this.action, {
-//         method: this.method,
-//         headers: { "X-CSRFToken": "{{ csrf_token }}" },
-//         body: new FormData(this)
-//     })
-//         .then((response) => {
-//             console.log(response);
-//             if (response.ok) {
-//                 return response.json();
-//             }
-//         })
-//         .then((data) => {
-//             if (data["success"] === true) {
-//                 this.reset();
-//                 alert("Form submitted successfully!"); // Optional success message
-//             }
-//         })
-//         .catch((error) => {
-//             console.error("Error:", error);
-//             alert("There was an error submitting the form."); // Optional error message
-//         });
-// });
-
 allForms.forEach(function (indivudualForm) {
     indivudualForm.addEventListener("submit", function (event) {
         event.preventDefault();
