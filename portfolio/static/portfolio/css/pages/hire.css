@@ -276,6 +276,64 @@
 }
 
 /* ---------------------- */
+/* Banner */
+/* Banner */
+
+.hire-cta-banner-image {
+    background-image: url("path/to/your-background-image.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: black;
+    text-align: center;
+    padding: 80px 20px;
+}
+.hire-cta-overlay {
+    background: linear-gradient(90deg, hsla(270, 94%, 25%, 1) 0%, hsla(158, 94%, 49%, 1) 100%);
+    padding: 50px 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.hire-cta-title {
+    font-size: 1.9rem;
+    margin-bottom: 10px;
+}
+.hire-cta-text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.hire-cta-button {
+    background-color: #007bff;
+    color: black;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+.hire-cta-button:hover {
+    background-color: #0056b3;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
+.pulse-animation {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+.hire-cta-overlay {
+    overflow: hidden;
+}
+/* ---------------------- */
 
 /* Media queries */
 /* Media queries */

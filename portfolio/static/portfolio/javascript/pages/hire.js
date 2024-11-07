@@ -3,8 +3,8 @@
 const webDevBtn = document.querySelector(".web-dev-btn");
 const wscrapingBtn = document.querySelector(".scraping-btn");
 const apiBtn = document.querySelector(".api-btn");
-const body = document.body;
 const closeBtns = document.querySelectorAll(".close");
+const button = document.querySelector(".hire-cta-button");
 
 webDevBtn.addEventListener("click", (event) => {
     openModal("modal-web-dev");
@@ -45,3 +45,15 @@ window.onclick = function (event) {
         }
     });
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+    
+    button.classList.add("pulse-animation");
+
+    // Trigger pulse animation every 3 seconds
+    setInterval(() => {
+        button.classList.remove("pulse-animation"); // Reset animation
+        void button.offsetWidth; // Trigger reflow to restart animation
+        button.classList.add("pulse-animation");
+    }, 3000);
+});
