@@ -2,8 +2,10 @@ function smoothScroll() {
     const allNavItems = document.querySelectorAll(".nav__item");
 
     const heroSection = document.querySelector("#hero");
+    const aboutSection = document.querySelector("#about-me");
     const skillsSection = document.querySelector("#skills");
     const projectsSection = document.querySelector("#projects");
+    const contactMeSection = document.querySelector("#contact-me");
 
     allNavItems.forEach(function (tag, index) {
         tag.addEventListener("click", function (e) {
@@ -16,12 +18,22 @@ function smoothScroll() {
                 // about
                 e.preventDefault(); // Prevent default anchor behavior
 
-                skillsSection.scrollIntoView({ behavior: "smooth" });
+                aboutSection.scrollIntoView({ behavior: "smooth" });
             } else if (index === 2) {
                 // skills
                 e.preventDefault(); // Prevent default anchor behavior
 
+                skillsSection.scrollIntoView({ behavior: "smooth" });
+            } else if (index === 3) {
+                // projects
+                e.preventDefault(); // Prevent default anchor behavior
+
                 projectsSection.scrollIntoView({ behavior: "smooth" });
+            } else if (index === 4) {
+                // contact
+                e.preventDefault(); // Prevent default anchor behavior
+
+                contactMeSection.scrollIntoView({ behavior: "smooth" });
             }
         });
     });
