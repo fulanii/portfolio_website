@@ -122,4 +122,7 @@
     .timeline-content {
         width: 100%;
     }
+    .projects-h1 {
+        font-size: 100px;
+    }
 }
