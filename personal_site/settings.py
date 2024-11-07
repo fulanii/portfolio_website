@@ -50,6 +50,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'htmlmin.middleware.HtmlMinifyMiddleware',
+    'htmlmin.middleware.MarkRequestMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -80,6 +83,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "personal_site.wsgi.application"
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -222,3 +231,7 @@ EMAIL_PORT = os.getenv("EMAIL_PORT")
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")  
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD") 
+
+COMPRESS_ENABLED = True
+HTML_MINIFY = True
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"

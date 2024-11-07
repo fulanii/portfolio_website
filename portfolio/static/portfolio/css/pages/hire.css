@@ -13,7 +13,7 @@
 /* Services section */
 /* Services section */
 #services-section {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 .cover {
     display: flex;
@@ -194,6 +194,86 @@
 
 /* Modals ^^^ Modals*/
 /* Modals ^^^ Modals*/
+
+/* ---------------------- */
+.how-it-works {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.how-it-works h2 {
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: #001d38;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.hire-timeline {
+    position: relative;
+}
+
+.hire-timeline:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--btn-color);
+    transform: translateX(-50%);
+}
+
+.hire-timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px;
+}
+
+.hire-timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+    padding-right: 30px;
+}
+
+.hire-timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+    padding-left: 30px;
+}
+
+.hire-timeline-item h3 {
+    color: var(--btn-color);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+.hire-timeline-item h3 a {
+    color: var(--btn-color);
+    text-decoration: underline;
+}
+
+.hire-timeline-item p {
+    color: #555;
+}
+
+.hire-timeline-item:before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: var(--btn-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    transform: translateX(-50%);
+}
+
+.hire-timeline-item:nth-child(odd):before {
+    right: -11px;
+}
+
+.hire-timeline-item:nth-child(even):before {
+    left: 1px;
+}
 
 /* ---------------------- */
 

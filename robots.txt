@@ -1,4 +1,4 @@
 User-agent: * 
 Disallow: /
 Allow: /blog/
-Sitemap: https://www.yassineissoufou.com/sitemap.xml
+Sitemap: https://yassinecodes.dev/blog/sitemap.xml

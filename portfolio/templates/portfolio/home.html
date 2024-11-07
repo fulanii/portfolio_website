@@ -47,6 +47,7 @@
 
     <div class="about-me__card">
         <img
+            loading="lazy"
             class="about-me__img"
             src="{% static 'portfolio/images/my_image2.avif' %}"
             alt="yassine-picture"
@@ -56,17 +57,22 @@
             <span class="about-me__span">I'm Yassine</span>
             from the United States.
             <br />
-            - I'm a self-taught Software Enginer. I have a big interest in various tech fields including
-            <span class="about-me__span">Web Development</span> (mostly focus on the backend). And <span class="about-me__span">Data, Quality Assurance</span> related fields.
-            I've been programming and writing code since high school.
-            Around the beginning of the COVID-19 pandemic, I took various online classes
-            to get ahead for when I go to college for my bachalor in <span class="about-me__span"> Computer Science</span>. After high school I attended a community college to take
-            general education classes, that's when I strated doing more research to become self-taught.
+            - I'm a self-taught Software Enginer. I have a big interest in various tech fields
+            including
+            <span class="about-me__span">Web Development</span>
+            (mostly focus on the backend). And
+            <span class="about-me__span">Data, Quality Assurance</span>
+            related fields. I've been programming and writing code since high school. Around the
+            beginning of the COVID-19 pandemic, I took various online classes to get ahead for when
+            I go to college for my bachalor in
+            <span class="about-me__span">Computer Science</span>
+            . After high school I attended a community college to take general education classes,
+            that's when I strated doing more research to become self-taught.
             <br />
-            - Fast forward to now I have a diverse set of skills suitable for various roles in the tech industry.
+            - Fast forward to now I have a diverse set of skills suitable for various roles in the
+            tech industry.
         </p>
     </div>
-    
 </section>
 
 <section id="skills">
@@ -227,6 +233,7 @@
         <div class="timeline-item" data-aos="fade-up">
             <figure class="timeline-img">
                 <img
+                    loading="lazy"
                     src="{% static 'portfolio/images/flaskproject.gif' %}"
                     alt="Flask web app with user auth"
                 />
@@ -240,6 +247,7 @@
                     people's posts, and be able to logout.
                 </p>
                 <a
+                    loading="lazy"
                     href="https://github.com/fulanii/flask-auth-project"
                     class="project-link"
                     target="_blank"
@@ -293,7 +301,7 @@
             <option value="" disabled selected>Select an option</option>
             <option value="question">I have a quick question</option>
             <option value="recruiter">I'm a recruiter</option>
-            <option value="services">I'm interested in your services </option>
+            <option value="services">I'm interested in your services</option>
         </select>
 
         <!-- Forms (Initially Hidden) -->
@@ -327,14 +335,14 @@
         <div id="form-recruiter" class="cta-form hidden">
             <form class="form" action="/contactforms/" method="POST">
                 {% csrf_token %}
-                <label> Name</label>
-                <input type="text" placeholder="Your name" required name="name"/>
+                <label>Name</label>
+                <input type="text" placeholder="Your name" required name="name" />
                 <label>Email</label>
-                <input type="email" placeholder="Your email" required name="email"/>
+                <input type="email" placeholder="Your email" required name="email" />
                 <label>Company</label>
-                <input type="text" placeholder="Your company" required name="company"/>
+                <input type="text" placeholder="Your company" required name="company" />
                 <label>Role</label>
-                <input type="text" placeholder="Role you're hiring for?" required name="role"/>
+                <input type="text" placeholder="Role you're hiring for?" required name="role" />
                 <p class="cta-resume"><a href="/download_resume">Download my resume</a></p>
                 <button type="submit">Submit</button>
             </form>
@@ -343,7 +351,7 @@
         <div id="form-services" class="cta-form hidden">
             <form class="form" action="/contactforms/" method="POST">
                 {% csrf_token %}
-                <label for="services" >Which service are you interested in? </label>
+                <label for="services">Which service are you interested in?</label>
                 <select name="services" class="services-select">
                     <option value="" disabled selected>Select an option</option>
                     <option value="web-dev">Web development</option>
@@ -352,22 +360,36 @@
                 </select>
 
                 <label>Name</label>
-                <input type="text" placeholder="Your name" required name="name"/>
+                <input type="text" placeholder="Your name" required name="name" />
 
                 <label>Email</label>
-                <input type="email" placeholder="Your email" required name="email"/>
+                <input type="email" placeholder="Your email" required name="email" />
 
-                <label>Budget</label>   
+                <label>Budget</label>
                 <!-- <input type="number" placeholder="Your budget $" required> -->
-                <input type="number" inputmode="numeric" pattern="[0-9]*" placeholder="Your budget $" name="budget"/>
+                <input
+                    type="number"
+                    inputmode="numeric"
+                    pattern="[0-9]*"
+                    placeholder="Your budget $"
+                    name="budget"
+                />
 
-
-                <label>When you need this</label>   
-                <input type="date" placeholder="In how long you need this done?" style="min-width: 100%;" required name="due-date">
+                <label>When you need this</label>
+                <input
+                    type="date"
+                    placeholder="In how long you need this done?"
+                    style="min-width: 100%"
+                    required
+                    name="due-date"
+                />
 
                 <label>Describe Your Needs</label>
-                <textarea placeholder="What kind of data are you looking to scrape?" required name="project-description"> </textarea>
-
+                <textarea
+                    placeholder="What kind of data are you looking to scrape?"
+                    required
+                    name="project-description"
+                ></textarea>
 
                 <button type="submit">Submit</button>
             </form>
@@ -376,23 +398,20 @@
 </section>
 
 {% endblock %} {% block home_page_script %}
-<script type="module" defer src="{% static 'portfolio/javascript/script.js' %}"></script>
-
-<script
-    type="module"
-    defer
-    src="{% static 'portfolio/javascript/utils/smoothScroll.js' %}"
-></script>
-<script type="module" defer src="{% static 'portfolio/javascript/utils/typewriter.js' %}"></script>
-<script type="module" defer src="{% static 'portfolio/javascript/components/navbar.js' %}"></script>
-<script
-    type="module"
-    defer
-    src="{% static 'portfolio/javascript/components/contact.js' %}"
-></script>
-
+<script defer type="module" src="{% static 'portfolio/javascript/script.js' %}"></script>
 <script defer src="https://kit.fontawesome.com/04840efe8b.js" crossorigin="anonymous"></script>
 <script defer src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+<script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script
+    defer
+    type="module"
+    src="{% static 'portfolio/javascript/utils/smoothScroll.js' %}"
+></script>
+<script defer type="module" src="{% static 'portfolio/javascript/utils/typewriter.js' %}"></script>
+<script defer type="module" src="{% static 'portfolio/javascript/components/navbar.js' %}"></script>
+<script
+    defer
+    type="module"
+    src="{% static 'portfolio/javascript/components/contact.js' %}"
+></script>
 {% endblock %}

@@ -4,13 +4,14 @@ from django.conf import settings
 from django.contrib.staticfiles import finders
 from django.contrib import messages
 from django.core.mail import send_mail
+from django.views.decorators.cache import cache_page
 
 import datetime
 import os
 
 from .utils.main import read_data
 
-
+@cache_page(60 * 15)  # Cache for 15 minutes
 def index(request):
     context = {
         "year": datetime.datetime.now().year,
@@ -18,6 +19,8 @@ def index(request):
 
     return render(request, "portfolio/home.html", context=context)
 
+def robots(request):
+   return render(request, "robots.txt")
 
 def resume(request):
     file_path = finders.find("portfolio/files/resume.pdf")
