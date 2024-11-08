@@ -279,7 +279,6 @@
 /* Banner */
 
 .hire-cta-banner-image {
-    background-image: url("path/to/your-background-image.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
