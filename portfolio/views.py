@@ -91,7 +91,7 @@ def contact_submit(request):
             message,
             settings.EMAIL_HOST_USER,  # From email (the one you set in settings)
             [
-                "yassine@yassineissoufou.com" # Recipient's email address (replace with the desired recipient)
+                "yassine@yassinecodes.dev" # Recipient's email address (replace with the desired recipient)
             ],  
             fail_silently=False,
         )
