@@ -1,6 +1,9 @@
 #about-me {
-    /* height: 100vh; */
     margin-left: 250px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .about-me__h1 {
@@ -10,11 +13,12 @@
     /* text-decoration-thickness: var(--under-line-thickness); */
 }
 .about-me__card {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     margin: 10px;
+    max-width: 1000px;
 }
 .about-me__description {
     /* max-width: 70%; */
