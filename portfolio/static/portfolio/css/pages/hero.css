@@ -71,7 +71,7 @@
     bottom: 0;
     border: none;
     cursor: pointer;
-    font: inherit;
+    /* font: inherit; */
     display: flex;
     align-items: center;
     font-size: 30px;
@@ -81,6 +81,9 @@
 .scroll-btn i {
     display: inline-block;
     animation: jump 1s infinite ease-in-out; /* Animate continuously */
+}
+.scroll-btn:hover{
+    color: var(--btn-color);
 }
 
 /* ------------------------------------------------------------------------- */
