@@ -39,6 +39,11 @@
                 </a>
             </li>
         </ul>
+        <!-- data-aos="fade-up" -->
+        <button class="scroll-btn">
+            <i class="bi bi-arrow-down"></i>
+            Scroll
+        </button>
     </div>
 </section>
 
@@ -422,17 +427,18 @@
 </section>
 
 {% endblock %} {% block home_page_script %}
-<script defer type="module" src="{% static 'portfolio/javascript/script.js' %}"></script>
 <script defer src="https://kit.fontawesome.com/04840efe8b.js" crossorigin="anonymous"></script>
 <script defer src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script defer type="module" src="{% static 'portfolio/javascript/script.js' %}"></script>
+<script defer type="module" src="{% static 'portfolio/javascript/utils/typewriter.js' %}"></script>
+<script defer type="module" src="{% static 'portfolio/javascript/components/navbar.js' %}"></script>
 <script
     defer
     type="module"
     src="{% static 'portfolio/javascript/utils/smoothScroll.js' %}"
 ></script>
-<script defer type="module" src="{% static 'portfolio/javascript/utils/typewriter.js' %}"></script>
-<script defer type="module" src="{% static 'portfolio/javascript/components/navbar.js' %}"></script>
 <script
     defer
     type="module"

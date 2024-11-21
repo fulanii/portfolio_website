@@ -66,10 +66,27 @@
 .social__a:hover {
     color: var(--black-text-color);
 }
+.scroll-btn {
+    position: absolute;
+    bottom: 0;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+    transition: opacity 250ms;
+}
+.scroll-btn i {
+    display: inline-block;
+    animation: jump 1s infinite ease-in-out; /* Animate continuously */
+}
+
 /* ------------------------------------------------------------------------- */
 
-/* Typewriter */
-/* Typewriter */
+/* Typewriter & animation */
+/* Typewriter & animation */
 @keyframes typing {
     from {
         width: 0;
@@ -101,6 +118,34 @@
 .erasing {
     animation: erasing 2s steps(20) forwards, blink 0.75s step-end infinite;
 }
+
+@keyframes jump {
+    0%,
+    100% {
+        transform: translateY(0); /* Default position */
+    }
+    50% {
+        transform: translateY(-10px); /* Move up slightly */
+    }
+}
+.hero__main,
+.hero__my-name,
+.hero__job-title,
+.hero__social-links,
+.scroll-btn {
+    animation: fade-in-bottom 0.5s ease-in-out 150ms both;
+}
+@keyframes fade-in-bottom {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* ------------------------------------------------------------------------- */
 
 /* Hero media queries */

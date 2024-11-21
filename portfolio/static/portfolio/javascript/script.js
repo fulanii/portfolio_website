@@ -32,7 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
             icon.classList.add("bi-list");
         }
     });
-    
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const arrowIcon = document.querySelector(".scroll-btn i");
+        arrowIcon.style.animation = "jump 1s infinite ease-in-out";
+    });
+
     // Navbar toggle
     document.querySelector(".icon-a").addEventListener("click", toggleNavbar);
 

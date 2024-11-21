@@ -6,6 +6,7 @@ function smoothScroll() {
     const skillsSection = document.querySelector("#skills");
     const projectsSection = document.querySelector("#projects");
     const contactMeSection = document.querySelector("#contact-me");
+    const scrolArrowBtn = document.querySelector(".scroll-btn");
 
     allNavItems.forEach(function (tag, index) {
         tag.addEventListener("click", function (e) {
@@ -36,6 +37,10 @@ function smoothScroll() {
                 contactMeSection.scrollIntoView({ behavior: "smooth" });
             }
         });
+    });
+    scrolArrowBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        aboutSection.scrollIntoView({ behavior: "smooth" });
     });
 }
 
