@@ -26,12 +26,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-if os.getenv("ENVIRONMENT") == "development":
-    DEBUG = True
-else:
-    DEBUG = False
-
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(",")
 
 # Application definition
@@ -61,6 +55,14 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+# SECURITY WARNING: don't run with debug turned on in production!
+if os.getenv("ENVIRONMENT") == "development":
+    DEBUG = True
+    INSTALLED_APPS += ["django_browser_reload"]
+    MIDDLEWARE += ["django_browser_reload.middleware.BrowserReloadMiddleware"]
+else:
+    DEBUG = False
 
 ROOT_URLCONF = "personal_site.urls"
 
