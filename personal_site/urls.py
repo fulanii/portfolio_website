@@ -32,5 +32,7 @@ urlpatterns = [
     path("", include("portfolio.urls")),
     path("blog/", include("blog.urls")),
     path("tinymce/", include("tinymce.urls")),
-    path("__reload__/", include("django_browser_reload.urls")),
 ]
+
+if os.getenv("ENVIRONMENT") == "development":
+    urlpatterns += [ path("__reload__/", include("django_browser_reload.urls")),]
