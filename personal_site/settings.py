@@ -191,7 +191,7 @@ if os.getenv("ENIVIRONMENT") == "production":
             "file": {
                 "level": "ERROR",
                 "class": "logging.FileHandler",
-                "filename": "error.log",
+                "filename": "/home/portfolio_website/personal_site/error.log",
             },
         },
         "loggers": {
