@@ -69,10 +69,10 @@
     /* width: 20%; */
     width: 100%;
 }
-.i__icon {
-    /* color: var(--nav-icon-color) */
-    color: black;
-}
+/* .i__icon {
+    color: var(--nav-icon-color) 
+    color: black; 
+} */
 .header__icon {
     display: none;
 }

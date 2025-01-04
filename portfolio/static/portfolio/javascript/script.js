@@ -18,6 +18,55 @@ function toggleNavbar() {
     }
 }
 
+// night mode on/off
+function nightMode(){
+    const body = document.querySelector("body");
+    const nightToggle = document.querySelector(".night-toggle i");
+    const allNavLinks = document.querySelectorAll(".nav__link");
+    const allSocialLinks = document.querySelectorAll(".social__a");
+    const allSkillsLi =  document.querySelectorAll(".skill-card li");
+    const skillCard = document.querySelectorAll(".skill-card");
+
+    if (nightToggle.classList.contains("bi-moon")) {
+        nightToggle.classList.remove("bi-moon");
+        nightToggle.classList.add("bi-sun");
+    
+        body.style.backgroundColor = "#1f2933";
+        body.style.color = "white";
+        allNavLinks.forEach((link) => {
+            link.style.color = "white";
+        });
+        allSocialLinks.forEach((link) => {
+            link.style.color = "white";
+        });
+        allSkillsLi.forEach((li) => {
+            li.style.color = "white";
+        });
+        skillCard.forEach((card) => {
+            card.style.backgroundColor = "#1f2933";
+        });
+    }
+    else {
+        nightToggle.classList.remove("bi-sun");
+        nightToggle.classList.add("bi-moon");
+    
+        body.style.backgroundColor = "white";
+        body.style.color = "black";
+        allNavLinks.forEach((link) => {
+            link.style.color = "black";
+        });
+        allSocialLinks.forEach((link) => {
+            link.style.color = "black";
+        });
+        allSkillsLi.forEach((li) => {
+            li.style.color = "black";
+        });
+        skillCard.forEach((card) => {
+            card.style.backgroundColor = "white";
+        });
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     // Ensure that the display style is reset based on the viewport width
     window.addEventListener("resize", () => {
@@ -40,6 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Navbar toggle
     document.querySelector(".icon-a").addEventListener("click", toggleNavbar);
+
+    // night toggle
+    document.querySelector(".night-toggle").addEventListener("click", nightMode);
 
     // AOS animation
     AOS.init();
