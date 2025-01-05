@@ -8,6 +8,7 @@
     position: fixed;
     top: 0;
     left: 0;
+    
     bottom: 0;
 }
 
@@ -62,9 +63,9 @@
     transition: width 0.3s ease;
     z-index: -1;
 }
-.nav__item:hover::before {
+/* .nav__item:hover::before {
     width: 100%;
-}
+} */
 .nav__item.active::before {
     /* width: 20%; */
     width: 100%;
@@ -87,7 +88,6 @@
 }
 @media (max-width: 775px) {
     #header {
-        background-color: var(--white-bg-color);
         display: none;
     }
     .header__icon {

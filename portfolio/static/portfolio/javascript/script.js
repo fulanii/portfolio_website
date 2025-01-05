@@ -1,9 +1,13 @@
+
+
 // for navbar togglr on/off
 function toggleNavbar() {
     const header = document.getElementById("header");
     const iconA = document.querySelector(".icon-a");
     const icon = document.querySelector(".header__nav__icon");
     const headerStyle = window.getComputedStyle(header);
+
+    const nightToggle = document.querySelector(".night-toggle i");
 
     // is header showing: hide
     if (headerStyle.display === "flex") {
@@ -16,6 +20,12 @@ function toggleNavbar() {
         icon.classList.remove("bi-list");
         icon.classList.add("bi-x");
     }
+
+    if (nightToggle.classList.contains("bi-moon")){
+        header.style.backgroundColor = "white"
+    } else {
+        header.style.backgroundColor = "#1f2933"
+    }
 }
 
 // night mode on/off
@@ -26,6 +36,7 @@ function nightMode(){
     const allSocialLinks = document.querySelectorAll(".social__a");
     const allSkillsLi =  document.querySelectorAll(".skill-card li");
     const skillCard = document.querySelectorAll(".skill-card");
+    const headerCover = document.getElementById("header")
 
     if (nightToggle.classList.contains("bi-moon")) {
         nightToggle.classList.remove("bi-moon");
@@ -45,6 +56,7 @@ function nightMode(){
         skillCard.forEach((card) => {
             card.style.backgroundColor = "#1f2933";
         });
+        headerCover.style.backgroundColor = "#1f2933"
     }
     else {
         nightToggle.classList.remove("bi-sun");
@@ -64,6 +76,8 @@ function nightMode(){
         skillCard.forEach((card) => {
             card.style.backgroundColor = "white";
         });
+        headerCover.style.backgroundColor = "white"
+
     }
 }
 
