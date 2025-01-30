@@ -14,7 +14,7 @@ class BlogSitemap(Sitemap):
 
 class StaticViewSitemap(Sitemap):
     priority = 0.9
-    changefreq = "monthly"
+    changefreq = "weekly"
 
     def items(self):
         return ["home", "hire", "links", "resume", "download_resume", ]
