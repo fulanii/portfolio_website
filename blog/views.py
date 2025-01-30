@@ -18,6 +18,3 @@ def post_detail(request, slug):
     blog = get_object_or_404(all_blog, slug=slug)
     return render(request, "blog/post_detail.html", {"blog": blog, "year": 2024})
 
-
-def google_console(request):
-    return render(request, "blog/googled207b771908af026.html")

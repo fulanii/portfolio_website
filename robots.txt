@@ -1,4 +1,3 @@
 User-agent: * 
-Disallow: /
 Allow: /blog/
 Sitemap: https://yassinecodes.dev/blog/sitemap.xml

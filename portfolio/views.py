@@ -11,7 +11,7 @@ import os
 
 from .utils.main import read_data
 
-# @cache_page(60 * 15)  # Cache for 15 minutes
+@cache_page(60 * 15)  # Cache for 15 minutes
 def index(request):
     context = {
         "year": datetime.datetime.now().year,
@@ -27,18 +27,15 @@ def resume(request):
     return FileResponse(open(file_path, "rb"), content_type="application/pdf")
     # return render(request, "portfolio/coming_soon.html")
 
-
 def links(request):
     context = {
         "url_data": read_data(),
     }
     return render(request, "portfolio/links.html", context)
 
-
 def hire(request):
     # return render(request, "portfolio/hire.html")
     return render(request, "portfolio/hire.html")
-
 
 def download_file(request, filename="yassinecodes_resume.pdf"):
     # Define the path to your file, replace with your file's actual path
@@ -47,7 +44,6 @@ def download_file(request, filename="yassinecodes_resume.pdf"):
     response = FileResponse(open(file_path, "rb"))
     response["Content-Disposition"] = f'attachment; filename="{filename}"'
     return response
-
 
 def contact_submit(request):
     if request.method == "POST":
