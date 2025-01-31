@@ -6,7 +6,7 @@ from django.views.decorators.http import require_http_methods
 from django.urls import reverse
 from .models import Blog
 from django.http import JsonResponse
-
+import datetime 
 
 def blog_home(request):
     all_blog = Blog.objects.all()
@@ -16,5 +16,6 @@ def blog_home(request):
 def post_detail(request, slug):
     all_blog = Blog.objects.all()
     blog = get_object_or_404(all_blog, slug=slug)
-    return render(request, "blog/post_detail.html", {"blog": blog, "year": 2024})
+    year = datetime.datetime.now().year
+    return render(request, "blog/post_detail.html", {"blog": blog, "year": year})
 
