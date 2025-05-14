@@ -20,7 +20,6 @@ allForms.forEach(function (indivudualForm) {
         event.preventDefault();
         fetch(this.action, {
             method: this.method,
-            "X-CSRFToken": getCookie("csrftoken"),
             body: new FormData(this)
         })
             .then((response) => {
