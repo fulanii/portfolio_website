@@ -20,11 +20,15 @@ allForms.forEach(function (indivudualForm) {
         event.preventDefault();
         fetch(this.action, {
             method: this.method,
-            headers: { "X-CSRFToken": "{{ csrf_token }}" },
+            headers: {
+                "X-CSRFToken": document.cookie
+                    .split("; ")
+                    .find((row) => row.startsWith("csrftoken"))
+                    ?.split("=")[1]
+            },
             body: new FormData(this)
         })
             .then((response) => {
-                console.log(response);
                 if (response.ok) {
                     return response.json();
                 }
@@ -36,7 +40,6 @@ allForms.forEach(function (indivudualForm) {
                 } else {
                     alert("Form submitmission failed try again later");
                 }
-
             })
             .catch((error) => {
                 console.error("Error:", error);

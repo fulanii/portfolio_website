@@ -81,20 +81,21 @@ def contact_submit(request):
                 f"Budget: ${budget}\nDue Date: {due_date}\nDescription: {project_description}"
             )
 
-        # Send the email
-        send_mail(
-            subject,
-            message,
-            settings.EMAIL_HOST_USER,  # From email (the one you set in settings)
-            [
-                "yassine@yassinecodes.dev" # Recipient's email address (replace with the desired recipient)
-            ],  
-            fail_silently=False,
-        )
+        try:                    # Send the email
+            send_mail(
+                subject,
+                message,
+                settings.EMAIL_HOST_USER,  # From email (the one you set in settings)
+                [
+                    "yassine@yassinecodes.dev" # Recipient's email address (replace with the desired recipient)
+                ],  
+                fail_silently=False,
+            )
+            # Respond with success
+            return JsonResponse({"success": True})
+        except Exception as e:
+            return JsonResponse({"success": False, "error": str(e)}, status=500)
 
-        # Respond with success
-        return JsonResponse({"success": True})
-
-    return JsonResponse(
-        {"success": False, "error": "Invalid request method"}, status=400
-    )
+    # return JsonResponse(
+    #     {"success": False, "error": "Invalid request method"}, status=400
+    # )
