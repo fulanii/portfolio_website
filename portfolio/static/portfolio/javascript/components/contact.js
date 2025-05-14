@@ -42,7 +42,7 @@ allForms.forEach(function (indivudualForm) {
                 }
             })
             .catch((error) => {
-                console.error("Error:", error);
+                console.log("Error:", error);
                 alert("There was an error submitting the form."); // Optional error message
             });
     });
