@@ -8,6 +8,8 @@ from django.views.decorators.cache import cache_page
 
 import datetime
 import os
+import requests
+
 
 from .utils.main import read_data
 
@@ -81,21 +83,14 @@ def contact_submit(request):
                 f"Budget: ${budget}\nDue Date: {due_date}\nDescription: {project_description}"
             )
 
-        try:                    # Send the email
-            send_mail(
-                subject,
-                message,
-                settings.EMAIL_HOST_USER,  # From email (the one you set in settings)
-                [
-                    "yassine@yassinecodes.dev" # Recipient's email address (replace with the desired recipient)
-                ],  
-                fail_silently=False,
-            )
-            # Respond with success
-            return JsonResponse({"success": True})
-        except Exception as e:
-            return JsonResponse({"success": False, "error": str(e)}, status=500)
+        data = {
+            "message": message
+        }
 
-    # return JsonResponse(
-    #     {"success": False, "error": "Invalid request method"}, status=400
-    # )
+        response = requests.post("https://hook.us2.make.com/mft0hudwcs8fo7mi2y8o2b5e2dslq937", json=data)
+
+        if response.status_code == 200:
+            return JsonResponse({"success": True}, status=200)
+        else:
+            return JsonResponse({"success": False, "error": response.text}, status=response.status_code)
+        

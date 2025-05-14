@@ -29,9 +29,13 @@
     padding: 10px;
     /* background: #f9f9f9; */
 }
+.about-me__description a {
+    color: blue;
+}
 .about-me__img {
     height: 300px;
     margin-left: auto;
+    border-radius: 100%;
 }
 
 .about-me__span {

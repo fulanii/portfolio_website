@@ -215,9 +215,7 @@
 .hire-timeline:before {
     content: "";
     position: absolute;
-    left: 50%;
-    top: 0;
-    width: 4px;
+    width: 2px;
     height: 100%;
     background-color: var(--btn-color);
     transform: translateX(-50%);
@@ -248,7 +246,6 @@
 }
 .hire-timeline-item h3 a {
     color: var(--btn-color);
-    text-decoration: underline;
 }
 
 .hire-timeline-item p {
@@ -267,11 +264,11 @@
 }
 
 .hire-timeline-item:nth-child(odd):before {
-    right: -11px;
+    right: -12px;
 }
 
 .hire-timeline-item:nth-child(even):before {
-    left: 1px;
+    left: 0;
 }
 
 /* ---------------------- */
