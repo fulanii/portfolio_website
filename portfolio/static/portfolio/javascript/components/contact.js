@@ -26,6 +26,9 @@ allForms.forEach(function (indivudualForm) {
                 if (response.ok) {
                     return response.json();
                 }
+                else{
+                    console.log("ErrorRes:", response);
+                }
             })
             .then((data) => {
                 if (data["success"] === true) {
