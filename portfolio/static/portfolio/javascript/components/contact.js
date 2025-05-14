@@ -20,12 +20,7 @@ allForms.forEach(function (indivudualForm) {
         event.preventDefault();
         fetch(this.action, {
             method: this.method,
-            headers: {
-                "X-CSRFToken": document.cookie
-                    .split("; ")
-                    .find((row) => row.startsWith("csrftoken"))
-                    ?.split("=")[1]
-            },
+            "X-CSRFToken": getCookie("csrftoken"),
             body: new FormData(this)
         })
             .then((response) => {
