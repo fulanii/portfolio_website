@@ -6,9 +6,15 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- page description -->
-        <meta name="description" content="Explore my portfolio showcasing web development projects, skills, and services to bring your ideas to life. Contact me for collaboration!">
+        <meta
+            name="description"
+            content="Explore my portfolio showcasing web development projects, skills, and services to bring your ideas to life. Contact me for collaboration!"
+        />
         <!-- page keywords -->
-        <meta name="keywords" content="Python, Django, Full-Stack Developer, Web Development, Automation, JavaScript, Freelancer" />
+        <meta
+            name="keywords"
+            content="Python, Django, Full-Stack Developer, Web Development, Automation, JavaScript, Freelancer"
+        />
         <!-- Favicon -->
         <link rel="icon" type="image/x-icon" href="{% static 'portfolio/images/favicon.ico' %}" />
         <!-- website title -->
@@ -39,7 +45,7 @@
             <nav id="header-nav" aria-label="Main Navigation">
                 <ul class="nav__list">
                     <a href="{% url 'home' %}#hero" class="nav__link">
-                        <li class="nav__item ">
+                        <li class="nav__item">
                             <i class="bi bi-house navicon i__icon"></i>
                             <span class="nav__span">Home</span>
                         </li>
@@ -47,37 +53,43 @@
                     <a href="{% url 'home' %}#about-me" class="nav__link">
                         <li class="nav__item i__icon">
                             <i class="bi bi-file-person i__icon"></i>
-                            <span class="nav__span ">About Me</span>
+                            <span class="nav__span">About Me</span>
                         </li>
                     </a>
-                    <a href="{% url 'home' %}#skills" class="nav__link ">
+                    <a href="{% url 'home' %}#skills" class="nav__link">
                         <li class="nav__item">
                             <i class="bi bi-braces i__icon"></i>
-                            <span class="nav__span ">Skills</span>
+                            <span class="nav__span">Skills</span>
                         </li>
                     </a>
                     <a href="{% url 'home' %}#projects" class="nav__link">
-                        <li class="nav__item ">
+                        <li class="nav__item">
                             <i class="bi bi-code-slash i__icon"></i>
                             <span class="nav__span projects-span">Projects</span>
                         </li>
                     </a>
                     <a href="{% url 'home' %}#contact-me" class="nav__link">
-                        <li class="nav__item ">
+                        <li class="nav__item">
                             <i class="bi bi-person-lines-fill i__icon"></i>
-                            <span class="nav__span ">Contact Me</span>
+                            <span class="nav__span">Contact Me</span>
                         </li>
                     </a>
                     <a href="{% url 'hire' %}" class="nav__link">
-                        <li class="nav__item ">
+                        <li class="nav__item">
                             <i class="bi bi-currency-dollar i__icon"></i>
                             <span class="nav__span">Hire Me</span>
                         </li>
                     </a>
                     <a href="{% url 'blog_home' %}" class="nav__link">
-                        <li class="nav__item ">
+                        <li class="nav__item">
                             <i class="bi bi-file-text i__icon"></i>
                             <span class="nav__span blog-span">Blog</span>
+                        </li>
+                    </a>
+                    <a href="{% url 'resume' %}" class="nav__link">
+                        <li class="nav__item">
+                            <i class="bi bi-filetype-pdf i__icon"></i>
+                            <span class="nav__span blog-span">Resume</span>
                         </li>
                     </a>
                 </ul>
