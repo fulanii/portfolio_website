@@ -235,38 +235,54 @@
             <div class="hire-timeline-item">
                 <h3>
                     Step 1:
-                    <a href="/#contact-me">Contact Me</a>
+                    <a href="/#contact-me">Step 1: Book a Free Discovery Call</a>
                 </h3>
-                <p>Reach out with your project requirements and initial ideas.</p>
+                <p>Share your goals, ideas, and current challenges — we'll explore what service is the right fit.</p>
             </div>
             <div class="hire-timeline-item">
-                <h3>Step 2: I Review & Respond</h3>
-                <p>I'll evaluate your requirements and get back to you with initial feedback.</p>
+                <h3>Step 2: Strategy Review</h3>
+                <p>I’ll review your needs and send over initial thoughts, recommendations, or questions within 24–48 hours.</p>
             </div>
             <div class="hire-timeline-item">
-                <h3>Step 3: Discussion</h3>
-                <p>We set up a meeting to discuss your project in detail.</p>
+                <h3>Step 3: Deep Dive Session</h3>
+                <p>We’ll meet again to map out your ideal workflow, tools, and expected results. No tech jargon — just clarity.</p>
             </div>
             <div class="hire-timeline-item">
-                <h3>Step 4: Proposal & Contract</h3>
-                <p>I send over a proposal with a project plan, timeline, and contract.</p>
+                <h3>Step 4: Proposal & Agreement</h3>
+                <p>You’ll receive a tailored proposal with scope, timeline, pricing, and contract terms for review.</p>
             </div>
             <div class="hire-timeline-item">
                 <h3>Step 5: Project Kickoff</h3>
-                <p>Once the contract is signed, I start working on your project!</p>
+                <p>Once everything’s approved, I’ll start building. You’ll get regular updates, demos, and clear communication throughout.</p>
             </div>
         </div>
     </section>
 
-    <div class="hire-cta-banner-image">
+    <!-- <div class="hire-cta-banner-image">
         <div class="hire-cta-overlay">
             <h2 class="hire-cta-title">Let’s Work Together</h2>
-            <!-- <p class="hire-cta-text">Bring your vision to life with a skilled developer on your team.</p>
-            <p class="hire-cta-text">I’m here to help with your development needs.</p> -->
+            <p class="hire-cta-text">Bring your vision to life with a skilled developer on your team.</p>
+            <p class="hire-cta-text">I’m here to help with your development needs.</p>
             <p class="hire-cta-text">To bring your ideas to life. Contact me today!</p>
             <a href="/#contact-me" class="hire-cta-button">Start Now Free!</a>
         </div>
-    </div>
+    </div> -->
+
+    <!-- Cal inline embed code begins -->
+    <div style="width:100%;height:100%;overflow:scroll;padding: 15px;" id="my-cal-inline"></div>
+    <script type="text/javascript">
+        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+        Cal("init", "30min", {origin:"https://app.cal.com"});
+
+        Cal.ns["30min"]("inline", {
+            elementOrSelector:"#my-cal-inline",
+            config: {"layout":"month_view","theme":"light"},
+            calLink: "yassinecodes/30min",
+        });
+
+        Cal.ns["30min"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#000000"},"dark":{"cal-brand":"#fff"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+    <!-- Cal inline embed code ends -->
 </main>
 {% endblock %}
 
