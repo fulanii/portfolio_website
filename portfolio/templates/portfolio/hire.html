@@ -48,11 +48,10 @@
                     alt=""
                     class="service-image"
                 />
-                <h3 class="service-title">Web Scraping & Automation</h3>
+                <h3 class="service-title">Web Scraping</h3>
                 <p class="service-description">
-                    Unlock valuable insights, save time with web scraping and automation. I help
-                    businesses collect, process, and analyze data from websites, streamlining
-                    workflows and automating repetitive tasks.
+                    Unlock valuable insights, save time with web scraping. I can help
+                    businesses collect, process, and analyze data from websites.
                 </p>
                 <button class="service-button scraping-btn">Learn More</button>
             </div>
@@ -72,7 +71,23 @@
                 <button class="service-button api-btn">Learn More</button>
             </div>
 
-            <!-- #TODO: Add no code, low code automation services (make.com, n8m, zapier) -->
+            <div class="service-card ">
+                <img
+                    src="{% static 'portfolio/images/api-icon.svg' %}"
+                    alt=""
+                    class="service-image"
+                />
+                <h3 class="service-title">AI no/low code Automation</h3>
+                <p class="service-description">
+                    I create powerful, scalable AI-driven automation solutions that streamline
+                    processes and enhance productivity. My expertise includes integrating no-code
+                    and low-code platforms like Make.com, n8n, and Zapier to deliver efficient workflows tailored to your
+                    business needs.
+                </p>
+                <button class="service-button no-code-btn">Learn More</button>
+            </div>
+
+            <!-- #TODO: Add no code, low code automation services (make.com, n8n, zapier) -->
         </div>
         <div id="modals">
             <div id="modal-web-dev" class="modal">
@@ -130,7 +145,7 @@
                         Development service, you’ll have a site that not only looks great but also
                         meets the technical demands of a modern, professional website.
                     </p>
-                    <a href=" {% url 'home' %}#contact-me  " class="modal-cta">Get in Touch</a>
+                    <a class="modal-cta">Book a call</a>
                 </div>
             </div>
 
@@ -177,7 +192,7 @@
                         high-quality, real-time data without the hassle of manually collecting and
                         processing it.
                     </p>
-                    <a href=" {% url 'home' %}#contact-me  " class="modal-cta">Get in Touch</a>
+                    <a class="modal-cta">Book a call</a>
                 </div>
             </div>
 
@@ -223,7 +238,55 @@
                         you’ll have a robust API that meets your business needs, allowing you to
                         connect and automate various parts of your technology stack efficiently.
                     </p>
-                    <a href=" {% url 'home' %}#contact-me  " class="modal-cta">Get in Touch</a>
+                    <a class="modal-cta">Book a call</a>
+                </div>
+            </div>
+
+            <div id="modal-no-code" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 class="modal-title">No/low-Code Development</h2>
+                    <p class="modal-description">
+                        AI-driven automation solutions that streamline processes and enhance
+                        productivity. My expertise includes integrating no-code and low-code
+                        platforms like Make.com, n8n, and Zapier to deliver efficient workflows
+                        tailored to your business needs.
+                    </p>
+                    <p class="modal-description">
+                        I specialize in creating custom automation solutions that connect various
+                        applications and services, allowing you to automate repetitive tasks, data
+                        transfers, and complex workflows without the need for extensive coding.
+                        These solutions are designed to be user-friendly, enabling you to manage and
+                        modify them easily as your business needs change.
+                    </p>
+
+                    <ul class="modal-description modal-description-ul">
+                        <li class="modal-description-li">make.com</li>
+                        <li class="modal-description-li">n8n</li>
+                        <li class="modal-description-li">Zapier</li>
+                    </ul>
+
+                    <p class="modal-description">
+                        I leverage these platforms to build powerful automations that can handle
+                        everything from simple tasks like data entry and email notifications to
+                        complex workflows that involve multiple applications and data sources.
+                        These automations can significantly reduce manual effort, minimize errors,
+                        and improve overall efficiency in your operations.
+                    </p>
+                    <p class="modal-description">
+                        My process begins with understanding your specific needs and identifying
+                        areas where automation can provide the most value. I then design and build
+                        the automation workflows, ensuring they are robust, scalable, and easy to
+                        maintain. I also provide documentation and training to help you get the most
+                        out of your new automation solutions.
+                    </p>
+                    <p class="modal-description" style="background-color: bisque">
+                        Once deployed, I offer support maintenance plans that cover updates,
+                        scaling, and troubleshooting. By choosing my Automation Development service,
+                        you’ll have a robust automation solution that meets your business needs, allowing you to
+                        integrate and automate various parts of your technology stack efficiently.
+                    </p>
+                    <a class="modal-cta">Book a call</a>
                 </div>
             </div>
         </div>
@@ -237,7 +300,7 @@
                     Step 1:
                     <a href="/#contact-me">Step 1: Book a Free Discovery Call</a>
                 </h3>
-                <p>Share your goals, ideas, and current challenges — we'll explore what service is the right fit.</p>
+                <p>Share your goals and ideas — we'll explore what service is the right fit.</p>
             </div>
             <div class="hire-timeline-item">
                 <h3>Step 2: Strategy Review</h3>

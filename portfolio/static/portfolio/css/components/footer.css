@@ -1,7 +1,7 @@
 
 #footer {
     margin-left: 250px;
-    border-top: 1px solid var(--my-red-color);
+    border-top: 1px solid black;
     height: 100px;
     display: flex;
     flex-direction: column;

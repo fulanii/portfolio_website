@@ -5,6 +5,9 @@ const wscrapingBtn = document.querySelector(".scraping-btn");
 const apiBtn = document.querySelector(".api-btn");
 const closeBtns = document.querySelectorAll(".close");
 const button = document.querySelector(".hire-cta-button");
+const noCodeBtn = document.querySelector(".no-code-btn");
+const bookCallBtn = document.querySelectorAll(".modal-cta");
+const modal = document.querySelectorAll(".modal");
 
 webDevBtn.addEventListener("click", (event) => {
     openModal("modal-web-dev");
@@ -14,6 +17,29 @@ wscrapingBtn.addEventListener("click", (event) => {
 });
 apiBtn.addEventListener("click", (event) => {
     openModal("modal-rest-api");
+});
+noCodeBtn.addEventListener("click", (event) => {
+    openModal("modal-no-code");
+});
+bookCallBtn.forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+        window.scrollTo({
+            top: document.querySelector("#my-cal-inline").offsetTop,
+            behavior: "smooth"
+        });
+
+        modal.forEach((modal) => {
+            // If the modal is open, close it
+            if (modal.style.display === "flex") {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto"; // Enable scrolling
+            }
+        });
+
+        event.preventDefault(); // Prevent default action if it's a link
+        event.stopPropagation(); // Stop the event from bubbling up
+        return false; // Prevent any further action
+    });
 });
 
 function openModal(modalId) {
@@ -45,15 +71,3 @@ window.onclick = function (event) {
         }
     });
 };
-
-document.addEventListener("DOMContentLoaded", function () {
-    
-    button.classList.add("pulse-animation");
-
-    // Trigger pulse animation every 3 seconds
-    setInterval(() => {
-        button.classList.remove("pulse-animation"); // Reset animation
-        void button.offsetWidth; // Trigger reflow to restart animation
-        button.classList.add("pulse-animation");
-    }, 3000);
-});

@@ -342,11 +342,11 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
-    .service-card-3 {
+    /* .service-card-3 {
         grid-column: 1 / -1;
         justify-self: center;
         width: 500px;
-    }
+    } */
     .service-card-3 p {
         min-height: 0;
     }
