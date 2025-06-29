@@ -8,6 +8,7 @@ const button = document.querySelector(".hire-cta-button");
 const noCodeBtn = document.querySelector(".no-code-btn");
 const bookCallBtn = document.querySelectorAll(".modal-cta");
 const modal = document.querySelectorAll(".modal");
+const calLogo = document.querySelector(".text-subtle");
 
 webDevBtn.addEventListener("click", (event) => {
     openModal("modal-web-dev");
@@ -71,3 +72,7 @@ window.onclick = function (event) {
         }
     });
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+    calLogo.style.display = "none"; // Hide the Calendly logo
+});
