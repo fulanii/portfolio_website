@@ -5,24 +5,19 @@
         "icon": "hire.svg"
     },
     {
+        "name": "Book free discovery call",
+        "url": "https://cal.com/yassinecodes/30min",
+        "icon": "cal.svg"
+    },
+    {
+        "name": "Discord Community",
+        "url": "https://discord.gg/AEAWFd5DXp",
+        "icon": "discord.svg"
+    },
+    {
         "name": "Twitter | X",
         "url": "https://x.com/yassinecodes",
         "icon": "x.svg"
-    },
-    {
-        "name": "GitHub",
-        "url": "https://github.com/fulanii",
-        "icon": "github.svg"
-    },
-    {
-        "name": "LinkedIn",
-        "url": "https://www.linkedin.com/in/yassinecodes/",
-        "icon": "linkedIn.svg"
-    },
-    {
-        "name": "Blog",
-        "url": "/blog",
-        "icon": "blog.svg"
     },
     {
         "name": "Youtube",
@@ -40,8 +35,23 @@
         "icon": "tiktok.svg"
     },
     {
-        "name": "Discord",
-        "url": "https://discord.gg/AEAWFd5DXp", 
-        "icon": "discord.svg"
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/yassinecodes/",
+        "icon": "linkedIn.svg"
+    },
+    {
+        "name": "Resume",
+        "url": "/resume",
+        "icon": "resume.svg"
+    },
+    {
+        "name": "GitHub",
+        "url": "https://github.com/fulanii",
+        "icon": "github.svg"
+    },
+    {
+        "name": "Blog",
+        "url": "/blog",
+        "icon": "blog.svg"
     }
 ]

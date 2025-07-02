@@ -59,7 +59,7 @@ pre {
 
 /* footer */
 #footer {
-    border-top: 1px solid #ff0a0a;
+    border-top: 1px solid black;
     height: 100px;
     display: flex;
     flex-direction: column;
