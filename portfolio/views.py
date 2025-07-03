@@ -47,15 +47,76 @@ def download_file(request, filename="yassinecodes_resume.pdf"):
     response["Content-Disposition"] = f'attachment; filename="{filename}"'
     return response
 
+# def contact_submit(request):
+#     if request.method == "POST":
+#         data = request.POST
+
+#         # Set default values for subject and message
+#         # subject = "New Contact Form Submission"
+#         # message = ""
+
+#         # Identify the form and format the email content accordingly
+#         if "question" in data:
+#             email = data["email"]
+#             question = data["question"]
+#             subject = "New Question Submitted"
+#             message = f"Email: {email}\nQuestion: {question}"
+
+#         elif "company" in data:
+#             name = data["name"]
+#             email = data["email"]
+#             company = data["company"]
+#             role = data["role"]
+#             subject = "New Recruiter Inquiry"
+#             message = f"Name: {name}\nEmail: {email}\nCompany: {company}\nRole: {role}"
+
+#         # elif "services" in data:
+#         #     services = data["services"]
+#         #     name = data["name"]
+#         #     email = data["email"]
+#         #     budget = data["budget"]
+#         #     due_date = data["due-date"]
+#         #     project_description = data["project-description"]
+#         #     subject = "Service Inquiry"
+#         #     message = (
+#         #         f"Service: {services}\nName: {name}\nEmail: {email}\n"
+#         #         f"Budget: ${budget}\nDue Date: {due_date}\nDescription: {project_description}"
+#         #     )
+
+#         data = {
+#             "message": message
+#         }
+
+#         response = requests.post("https://hook.us2.make.com/mft0hudwcs8fo7mi2y8o2b5e2dslq937", json=data)
+
+#         if response.status_code == 200:
+#             return JsonResponse({"success": True}, status=200)
+#         else:
+#             return JsonResponse({"success": False, "error": response.text}, status=response.status_code)
+
+
+
 def contact_submit(request):
     if request.method == "POST":
         data = request.POST
 
-        # Set default values for subject and message
-        # subject = "New Contact Form Submission"
-        # message = ""
+        # 🔐 Verify reCAPTCHA
+        recaptcha_token = data.get("g-recaptcha-response")
+        secret_key = "6LfqyXUrAAAAAHDfvZFtByuoeW5-KEfvm7ubRkG6"  # Or use settings.RECAPTCHA_SECRET_KEY
 
-        # Identify the form and format the email content accordingly
+        recaptcha_response = requests.post(
+            "https://www.google.com/recaptcha/api/siteverify",
+            data={
+                "secret": secret_key,
+                "response": recaptcha_token,
+            }
+        )
+        result = recaptcha_response.json()
+
+        if not result.get("success"):
+            return JsonResponse({"success": False, "error": "reCAPTCHA verification failed."}, status=400)
+
+        # ✅ Continue processing the form
         if "question" in data:
             email = data["email"]
             question = data["question"]
@@ -70,19 +131,6 @@ def contact_submit(request):
             subject = "New Recruiter Inquiry"
             message = f"Name: {name}\nEmail: {email}\nCompany: {company}\nRole: {role}"
 
-        elif "services" in data:
-            services = data["services"]
-            name = data["name"]
-            email = data["email"]
-            budget = data["budget"]
-            due_date = data["due-date"]
-            project_description = data["project-description"]
-            subject = "Service Inquiry"
-            message = (
-                f"Service: {services}\nName: {name}\nEmail: {email}\n"
-                f"Budget: ${budget}\nDue Date: {due_date}\nDescription: {project_description}"
-            )
-
         data = {
             "message": message
         }
@@ -93,4 +141,3 @@ def contact_submit(request):
             return JsonResponse({"success": True}, status=200)
         else:
             return JsonResponse({"success": False, "error": response.text}, status=response.status_code)
-        
