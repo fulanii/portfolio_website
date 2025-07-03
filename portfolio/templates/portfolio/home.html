@@ -441,8 +441,6 @@
         <div id="form-question" class="cta-form hidden">
             <form class="form q-form" action="/contactforms/" method="POST">
                 {% csrf_token %}
-                <!-- <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" required> -->
 
                 <label for="email">Your Email</label>
                 <input
@@ -461,6 +459,8 @@
                     required
                 ></textarea>
 
+                <div class="g-recaptcha" data-sitekey="6LfqyXUrAAAAAA4BTjxl-x44MxA18TbSmpnuZoJV"></div>
+
                 <button type="submit">Submit</button>
             </form>
         </div>
@@ -477,11 +477,15 @@
                 <label>Role</label>
                 <input type="text" placeholder="Role you're hiring for?" required name="role" />
                 <p class="cta-resume"><a href="/download_resume">Download my resume</a></p>
+
+                <div class="g-recaptcha" data-sitekey="6LfqyXUrAAAAAA4BTjxl-x44MxA18TbSmpnuZoJV"></div>
+
                 <button type="submit">Submit</button>
             </form>
         </div>
 
-        <div id="form-services" class="cta-form hidden">
+        <!-- 
+        <div id="form-services" class="cta-form hidden"> 
             <form class="form" action="/contactforms/" method="POST">
                 {% csrf_token %}
                 <label for="services">Which service are you interested in?</label>
@@ -499,7 +503,6 @@
                 <input type="email" placeholder="Your email" required name="email" />
 
                 <label>Budget</label>
-                <!-- <input type="number" placeholder="Your budget $" required> -->
                 <input
                     type="number"
                     inputmode="numeric"
@@ -529,6 +532,7 @@
                 <button type="submit">Submit</button>
             </form>
         </div>
+        -->
     </div>
 </section>
 
