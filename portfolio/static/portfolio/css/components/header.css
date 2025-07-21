@@ -1,8 +1,8 @@
 #header {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    /* flex-direction: column; */
+    /* align-items: flex-start;
+    justify-content: center; */
     width: 250px;
     z-index: 997;
     position: fixed;
