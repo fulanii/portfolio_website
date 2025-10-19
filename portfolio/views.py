@@ -13,7 +13,7 @@ import requests
 
 from .utils.main import read_data
 
-# @cache_page(60 * 15)  # Cache for 15 minutes
+@cache_page(60 * 15)  # Cache for 15 minutes
 def index(request):
     context = {
         "year": datetime.datetime.now().year,
