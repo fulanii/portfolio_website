@@ -358,11 +358,10 @@
                     >
                         Bluesky
                     </a>
-                    . The frontend is built entirely with vanilla technologies (HTML, CSS, and
-                    JavaScript), while the backend leverages Python, PostgreSQL (database), Nginx
-                    (web server), Redis, and Celery for task queuing. The application is
-                    containerized with Docker and deployed to a DigitalOcean VPS using GitHub
-                    Actions.
+                    .The frontend is built entirely with vanilla technologies, while the backend
+                    uses Python, PostgreSQL, Nginx, Redis, and Celery for task queuing. The
+                    application is containerized with Docker and deployed to a DigitalOcean VPS
+                    using GitHub Actions.
                     <!-- <a
                         href="https://autoblue.yassinecodes.dev/"
                         target="_blank"
@@ -422,6 +421,37 @@
                 </a>
             </div>
         </div>
+
+        <div class="timeline-item" data-aos="fade-up">
+            <figure class="timeline-img">
+                <img
+                    src="{% static 'portfolio/images/musiquepeulh.png' %}"
+                    alt="MusiquePeulh demo"
+                />
+                <figcaption>Project demonstration.</figcaption>
+            </figure>
+            <div class="timeline-content">
+                <h2 class="timeline-content-h2">MusiquePeulh</h2>
+                <p class="timeline-content-p">
+                    <strong>MusiquePeulh</strong>
+                    Designed and developed a full-stack music streaming web application celebrating
+                    Fulani and African music culture. Implemented a modern, scalable architecture
+                    with secure authentication, cloud storage, and a responsive, Spotify-style
+                    player. <a
+                        href="https://musiquepeulh.com"
+                        target="_blank"
+                        style="color: var(--btn-color)"
+                    >Visit Site</a>
+                </p>
+                <a
+                    href="https://github.com/fulanii/musique-peulh-backend"
+                    class="project-link"
+                    target="_blank"
+                >
+                    Learn More
+                </a>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -459,7 +489,10 @@
                     required
                 ></textarea>
 
-                <div class="g-recaptcha" data-sitekey="6LfqyXUrAAAAAA4BTjxl-x44MxA18TbSmpnuZoJV"></div>
+                <div
+                    class="g-recaptcha"
+                    data-sitekey="6LfqyXUrAAAAAA4BTjxl-x44MxA18TbSmpnuZoJV"
+                ></div>
 
                 <button type="submit">Submit</button>
             </form>
@@ -478,7 +511,10 @@
                 <input type="text" placeholder="Role you're hiring for?" required name="role" />
                 <p class="cta-resume"><a href="/download_resume">Download my resume</a></p>
 
-                <div class="g-recaptcha" data-sitekey="6LfqyXUrAAAAAA4BTjxl-x44MxA18TbSmpnuZoJV"></div>
+                <div
+                    class="g-recaptcha"
+                    data-sitekey="6LfqyXUrAAAAAA4BTjxl-x44MxA18TbSmpnuZoJV"
+                ></div>
 
                 <button type="submit">Submit</button>
             </form>
