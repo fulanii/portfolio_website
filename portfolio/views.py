@@ -13,6 +13,10 @@ import requests
 
 from .utils.main import read_data
 
+def temp_under_construction(request):
+    return render(request, "portfolio/temp.html")
+
+
 @cache_page(60 * 15)  # Cache for 15 minutes
 def index(request):
     context = {
