@@ -10,11 +10,115 @@ import datetime
 import os
 import requests
 
-
 from .utils.main import read_data
 
+
+# --------------------------------------- temp under contruction ----------------------------------------------
+import requests
+import threading
+import logging
+from django.shortcuts import render
+from django.utils import timezone
+from user_agents import parse
+
+# --- Configuration ---
+WEBHOOK_URL = "https://hook.us2.make.com/huw0otphtdaohayampvt301xpqilxy7n"
+IP_API_URL = "http://ip-api.com/json/{ip}?fields=continentCode,status"
+
+# Configure logging
+logger = logging.getLogger(__name__)
+
+# --- Helper Functions ---
+def get_client_ip(request):
+    """
+    Retrieves the client's IP address, prioritizing X-Forwarded-For 
+    if the app is behind a proxy like Nginx.
+    """
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0].strip()
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
+def get_continent_data(ip_address):
+    """Performs a simple API call to get only the continent code."""
+    try:
+        url = IP_API_URL.format(ip=ip_address)
+        # Use a short timeout since this is running in a background thread
+        response = requests.get(url, timeout=3)
+        response.raise_for_status() # Raise exception for bad status codes (4xx or 5xx)
+        data = response.json()
+
+        if data.get('status') == 'success':
+            return {
+                "continent_code": data.get('continentCode'),
+                "status": "Success (IP-API)"
+            }
+        else:
+            return {"status": f"IP-API Error: {data.get('message', 'Unknown failure')}"}
+
+    except requests.exceptions.RequestException as e:
+        logger.error(f"IP-API request error for IP {ip_address}: {e}")
+        return {"status": f"Network Error: {e}"}
+
+def send_webhook_data(data):
+    """
+    Sends the collected visitor data as JSON to the webhook URL.
+    This runs in a separate thread to prevent blocking the user's page load.
+    """
+    try:
+        requests.post(WEBHOOK_URL, json=data, timeout=5)
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Failed to send visitor data to webhook: {e}")
+
 def temp_under_construction(request):
+    """
+    Captures visitor data, including continent, sends it to the webhook, and renders the page.
+    """
+    ip_address = get_client_ip(request)
+    user_agent_string = request.META.get('HTTP_USER_AGENT', 'Unknown')
+    user_agent = parse(user_agent_string)
+
+    # Get continent data (runs in the main thread, but is very fast)
+    continent_data = get_continent_data(ip_address)
+
+    # --- 1. Gather Data ---
+    data_to_send = {
+        "timestamp": timezone.now().isoformat(),
+        "client_ip": ip_address,
+        "request_details": {
+            "method": request.method,
+            "path": request.path,
+            "is_secure": request.is_secure(),
+        },
+        "device_info": {
+            "browser": user_agent.browser.family,
+            "os": user_agent.os.family,
+            "device_type": (
+                "mobile" if user_agent.is_mobile 
+                else ("tablet" if user_agent.is_tablet else "desktop")
+            ),
+            "is_bot": user_agent.is_bot,
+            "user_agent_raw": user_agent_string,
+        },
+        "location": continent_data,
+        "key_headers": {
+            "referrer": request.META.get('HTTP_REFERER', 'N/A'),
+            "accept_language": request.META.get('HTTP_ACCEPT_LANGUAGE', 'N/A'),
+        }
+    }
+
+    # --- 2. Send Data Asynchronously ---
+    webhook_thread = threading.Thread(
+        target=send_webhook_data, 
+        args=(data_to_send,)
+    )
+    webhook_thread.start()
+
+    # --- 3. Render Page (Immediate Response) ---
     return render(request, "portfolio/temp.html")
+# --------------------------------------- temp under contruction ----------------------------------------------
 
 
 @cache_page(60 * 15)  # Cache for 15 minutes
