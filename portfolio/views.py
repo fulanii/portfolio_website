@@ -15,83 +15,71 @@ from .utils.main import read_data
 
 # --------------------------------------- temp under contruction ----------------------------------------------
 import requests
-import threading
 import logging
 from django.shortcuts import render
 from django.utils import timezone
 from user_agents import parse
 
-
+# Configuration
 logger = logging.getLogger(__name__)
-WEBHOOK_URL = "https://hook.us2.make.com/huw0otphtdaohayampvt301xpqilxy7n"
+WEBHOOK_URL = "https://hook.us2.make.com/huw0otphtdaohayampvt301xpilxy7n"
 IP_API_URL = "http://ip-api.com/json/{ip}"
 
-def get_client_ip(request):
-    """
-    Retrieves the client's IP address, prioritizing X-Forwarded-For
-    if the app is behind a proxy like Nginx.
-    """
 
+def get_client_ip(request):
+    """Retrieves the client's IP address, prioritizing X-Forwarded-For."""
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-    
+
     if x_forwarded_for:
-        # Get the first IP in the list (usually the client's actual IP)
         ip = x_forwarded_for.split(',')[0].strip()
     else:
         ip = request.META.get('REMOTE_ADDR')
-        return ip
+    
+    # This return statement was missing/misplaced, causing the function to return None in production.
+    return ip
+
 
 def get_ip_location_data(ip_address):
-    """
-    Performs an API call to get ALL location data for the IP address.
-    Returns the full JSON response from IP-API on success.
-    """
+    """Performs an API call to get ALL location data for the IP address."""
     try:
         url = IP_API_URL.format(ip=ip_address)
-        # Use a short timeout since this is running in a background thread
         response = requests.get(url, timeout=3)
-        response.raise_for_status() # Raise exception for bad status codes (4xx or 5xx)
+        response.raise_for_status()
         data = response.json()
 
         if data.get('status') == 'success':
-            # Return the full successful response dictionary
             return data
         else:
-            # Return a controlled error message if IP-API reported failure
             return {"status": f"IP-API Error: {data.get('message', 'Unknown failure')}", "query": ip_address}
 
     except requests.exceptions.RequestException as e:
         logger.error(f"IP-API request error for IP {ip_address}: {e}")
-        # Return a controlled error message for network/request failures
         return {"status": f"Network Error: {e}", "query": ip_address}
 
+
 def send_webhook_data(data):
-    """
-    Sends the collected visitor data as JSON to the webhook URL.
-    This runs in a separate thread to prevent blocking the user's page load.
-    """
+    """Sends the collected visitor data as JSON to the webhook URL (Synchronous)."""
     try:
         response = requests.post(WEBHOOK_URL, json=data, timeout=5)
         response.raise_for_status()
     except requests.exceptions.RequestException as e:
         logger.error(f"Failed to send visitor data to webhook: {e}")
 
+
 def temp_under_construction(request):
-    """
-    Captures visitor data, including the full IP-API response,
-    sends it to the webhook, and renders the page.
-    """
+    """Captures visitor data, sends it to the webhook synchronously, and renders the page."""
     ip_address = get_client_ip(request)
     user_agent_string = request.META.get('HTTP_USER_AGENT', 'Unknown')
     user_agent = parse(user_agent_string)
-
-    # Get the full IP-API JSON response (runs synchronously)
+    
+    # Get the full IP-API JSON response
     ip_api_response = get_ip_location_data(ip_address)
 
-    # --- 1. Gather Data ---
+    # Gather Data
     data_to_send = {
         "timestamp": timezone.now().isoformat(),
-        "client_ip": ip_address,
+        # This will now correctly contain the client's IP address
+        "client_ip": ip_address, 
         "request_details": {
             "method": request.method,
             "path": request.path,
@@ -107,7 +95,6 @@ def temp_under_construction(request):
             "is_bot": user_agent.is_bot,
             "user_agent_raw": user_agent_string,
         },
-        # This key now holds the complete JSON response from IP-API
         "ip_lookup_data": ip_api_response,
         "key_headers": {
             "referrer": request.META.get('HTTP_REFERER', 'N/A'),
@@ -115,14 +102,10 @@ def temp_under_construction(request):
         }
     }
 
-    # --- 2. Send Data Asynchronously ---
-    webhook_thread = threading.Thread(
-        target=send_webhook_data,
-        args=(data_to_send,)
-    )
-    webhook_thread.start()
+    # Send Data Synchronously
+    send_webhook_data(data_to_send)
 
-    # --- 3. Render Page (Immediate Response) ---
+    # Render Page (Immediate Response)
     return render(request, "portfolio/temp.html")
 # --------------------------------------- temp under contruction ----------------------------------------------
 
