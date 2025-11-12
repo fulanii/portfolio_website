@@ -21,28 +21,31 @@ from django.shortcuts import render
 from django.utils import timezone
 from user_agents import parse
 
-# --- Configuration ---
-WEBHOOK_URL = "https://hook.us2.make.com/huw0otphtdaohayampvt301xpqilxy7n"
-IP_API_URL = "http://ip-api.com/json/{ip}?fields=continentCode,status"
 
-# Configure logging
 logger = logging.getLogger(__name__)
+WEBHOOK_URL = "https://hook.us2.make.com/huw0otphtdaohayampvt301xpqilxy7n"
+IP_API_URL = "http://ip-api.com/json/{ip}"
 
-# --- Helper Functions ---
 def get_client_ip(request):
     """
-    Retrieves the client's IP address, prioritizing X-Forwarded-For 
+    Retrieves the client's IP address, prioritizing X-Forwarded-For
     if the app is behind a proxy like Nginx.
     """
+
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    
     if x_forwarded_for:
+        # Get the first IP in the list (usually the client's actual IP)
         ip = x_forwarded_for.split(',')[0].strip()
     else:
         ip = request.META.get('REMOTE_ADDR')
-    return ip
+        return ip
 
-def get_continent_data(ip_address):
-    """Performs a simple API call to get only the continent code."""
+def get_ip_location_data(ip_address):
+    """
+    Performs an API call to get ALL location data for the IP address.
+    Returns the full JSON response from IP-API on success.
+    """
     try:
         url = IP_API_URL.format(ip=ip_address)
         # Use a short timeout since this is running in a background thread
@@ -51,16 +54,16 @@ def get_continent_data(ip_address):
         data = response.json()
 
         if data.get('status') == 'success':
-            return {
-                "continent_code": data.get('continentCode'),
-                "status": "Success (IP-API)"
-            }
+            # Return the full successful response dictionary
+            return data
         else:
-            return {"status": f"IP-API Error: {data.get('message', 'Unknown failure')}"}
+            # Return a controlled error message if IP-API reported failure
+            return {"status": f"IP-API Error: {data.get('message', 'Unknown failure')}", "query": ip_address}
 
     except requests.exceptions.RequestException as e:
         logger.error(f"IP-API request error for IP {ip_address}: {e}")
-        return {"status": f"Network Error: {e}"}
+        # Return a controlled error message for network/request failures
+        return {"status": f"Network Error: {e}", "query": ip_address}
 
 def send_webhook_data(data):
     """
@@ -68,20 +71,22 @@ def send_webhook_data(data):
     This runs in a separate thread to prevent blocking the user's page load.
     """
     try:
-        requests.post(WEBHOOK_URL, json=data, timeout=5)
+        response = requests.post(WEBHOOK_URL, json=data, timeout=5)
+        response.raise_for_status()
     except requests.exceptions.RequestException as e:
         logger.error(f"Failed to send visitor data to webhook: {e}")
 
 def temp_under_construction(request):
     """
-    Captures visitor data, including continent, sends it to the webhook, and renders the page.
+    Captures visitor data, including the full IP-API response,
+    sends it to the webhook, and renders the page.
     """
     ip_address = get_client_ip(request)
     user_agent_string = request.META.get('HTTP_USER_AGENT', 'Unknown')
     user_agent = parse(user_agent_string)
 
-    # Get continent data (runs in the main thread, but is very fast)
-    continent_data = get_continent_data(ip_address)
+    # Get the full IP-API JSON response (runs synchronously)
+    ip_api_response = get_ip_location_data(ip_address)
 
     # --- 1. Gather Data ---
     data_to_send = {
@@ -96,13 +101,14 @@ def temp_under_construction(request):
             "browser": user_agent.browser.family,
             "os": user_agent.os.family,
             "device_type": (
-                "mobile" if user_agent.is_mobile 
+                "mobile" if user_agent.is_mobile
                 else ("tablet" if user_agent.is_tablet else "desktop")
             ),
             "is_bot": user_agent.is_bot,
             "user_agent_raw": user_agent_string,
         },
-        "location": continent_data,
+        # This key now holds the complete JSON response from IP-API
+        "ip_lookup_data": ip_api_response,
         "key_headers": {
             "referrer": request.META.get('HTTP_REFERER', 'N/A'),
             "accept_language": request.META.get('HTTP_ACCEPT_LANGUAGE', 'N/A'),
@@ -111,7 +117,7 @@ def temp_under_construction(request):
 
     # --- 2. Send Data Asynchronously ---
     webhook_thread = threading.Thread(
-        target=send_webhook_data, 
+        target=send_webhook_data,
         args=(data_to_send,)
     )
     webhook_thread.start()
