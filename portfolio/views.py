@@ -22,7 +22,7 @@ from user_agents import parse
 
 # Configuration
 logger = logging.getLogger(__name__)
-WEBHOOK_URL = "https://hook.us2.make.com/huw0otphtdaohayampvt301xpilxy7n"
+WEBHOOK_URL = "https://hook.us2.make.com/huw0otphtdaohayampvt301xpqilxy7n" 
 IP_API_URL = "http://ip-api.com/json/{ip}"
 
 
