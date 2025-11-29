@@ -11,10 +11,10 @@ sitemaps = {
 
 
 urlpatterns = [
-    path("", views.temp_under_construction, name="home"),
-    path("home/", views.temp_under_construction, name="home"),
-    # path("", views.index, name="home"),
-    # path("home/", views.index, name="home"),
+    # path("", views.temp_under_construction, name="home"),
+    # path("home/", views.temp_under_construction, name="home"),
+    path("", views.index, name="home"),
+    path("home/", views.index, name="home"),
     path("resume/", views.resume, name="resume"),
     path("links/", views.links, name="links"),
     path("hire/", views.hire, name="hire"),
