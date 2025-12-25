@@ -7,6 +7,17 @@
     --my-red-color: #ff0a0a; /* c40c0c; */
     --under-line-thickness: 8px;
 }
+
+/* Dark mode (night mode) variables - default mode */
+.night-mode {
+    --white-bg-color: #1a1a1a;
+    --black-text-color: #e0e0e0;
+    --white-text-color: #e0e0e0;
+    --btn-color: #4a9eff;
+    --nav-icon-color: #ff4a4a;
+    --my-red-color: #ff4a4a;
+}
+
 html {
     font-size: 100%; /* This sets the font size to the default browser setting, usually 16px */
     -webkit-text-size-adjust: 100%; /* Prevents auto-resizing text on iOS Safari */
@@ -18,10 +29,12 @@ body {
     background-color: var(--white-bg-color);
     max-width: 100%;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 a {
     text-decoration: none;
     color: var(--black-text-color);
+    transition: color 0.3s ease;
 }
 li {
     list-style: none;

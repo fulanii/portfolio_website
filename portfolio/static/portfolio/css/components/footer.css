@@ -1,15 +1,16 @@
-
 #footer {
     margin-left: 250px;
-    border-top: 1px solid black;
+    border-top: 1px solid var(--black-text-color);
     height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: border-color 0.3s ease;
 }
 
-.footer__h1, .footer__link {
+.footer__h1,
+.footer__link {
     width: 100%;
     max-width: 210px;
 }
