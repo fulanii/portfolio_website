@@ -75,10 +75,10 @@
     font-size: 16px;
     font-weight: 200;
     line-height: 30px;
-    min-height: 150px;
+    min-height: 100px;
 }
 .service-button {
-    margin-top: auto;
+    /* margin-top: auto; */
     width: 100%;
     padding: 10px;
     background-color: var(--btn-color);

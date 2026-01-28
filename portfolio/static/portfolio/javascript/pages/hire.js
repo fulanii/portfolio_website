@@ -2,7 +2,7 @@
 
 const webDevBtn = document.querySelector(".web-dev-btn");
 const wscrapingBtn = document.querySelector(".scraping-btn");
-const apiBtn = document.querySelector(".api-btn");
+// const apiBtn = document.querySelector(".api-btn");
 const closeBtns = document.querySelectorAll(".close");
 const button = document.querySelector(".hire-cta-button");
 const noCodeBtn = document.querySelector(".no-code-btn");
@@ -16,12 +16,12 @@ webDevBtn.addEventListener("click", (event) => {
 wscrapingBtn.addEventListener("click", (event) => {
     openModal("modal-web-scraping");
 });
-apiBtn.addEventListener("click", (event) => {
-    openModal("modal-rest-api");
-});
-noCodeBtn.addEventListener("click", (event) => {
-    openModal("modal-no-code");
-});
+// apiBtn.addEventListener("click", (event) => {
+//     openModal("modal-rest-api");
+// });
+// noCodeBtn.addEventListener("click", (event) => {
+//     openModal("modal-no-code");
+// });
 bookCallBtn.forEach((btn) => {
     btn.addEventListener("click", (event) => {
         window.scrollTo({
@@ -73,6 +73,6 @@ window.onclick = function (event) {
     });
 };
 
-document.addEventListener("DOMContentLoaded", function () {
-    calLogo.style.display = "none"; // Hide the Calendly logo
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//     calLogo.style.display = "none"; // Hide the Calendly logo
+// });
