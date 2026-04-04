@@ -282,173 +282,210 @@
 
 <section id="projects">
     <h1 class="projects-h1">Projects</h1>
-    <div class="timeline">
-        <div class="timeline-item" data-aos="fade-up">
-            <figure class="timeline-img">
-                <img src="{% static 'portfolio/images/musiquepeulh.png' %}" alt="musique picture" />
-                <!-- <figcaption>Project demonstration.</figcaption> -->
-            </figure>
-            <div class="timeline-content">
-                <h2 class="timeline-content-h2">MusiquePeulh</h2>
-                <p class="timeline-content-p">
-                    <strong>MusiquePeulh</strong>
-                    Designed and developed a full-stack music streaming web application celebrating
-                    Fulani and African music culture. Implemented a modern, scalable architecture
-                    with secure authentication, cloud storage, and a responsive, Spotify-style
-                    player.
-                    <a
-                        href="https://musiquepeulh.com"
-                        target="_blank"
-                        style="color: var(--btn-color)"
-                    >
-                        Visit Site
-                    </a>
-                </p>
-                <a
-                    href="https://github.com/fulanii/musique-peulh-backend"
-                    class="project-link"
-                    target="_blank"
-                >
-                    View Project Github
-                </a>
-            </div>
-        </div>
+    <div class="projects-showcase">
 
-        <div class="timeline-item" data-aos="fade-up">
-            <figure class="timeline-img">
+        <ul class="projects-list">
+            <li class="projects-list__item active" data-project="0">
+                <span class="projects-list__num">01</span>
+                <span class="projects-list__name">Client Portal</span>
+                <i class="bi bi-arrow-right projects-list__arrow"></i>
+            </li>
+            <li class="projects-list__item" data-project="1">
+                <span class="projects-list__num">02</span>
+                <span class="projects-list__name">MusiquePeulh</span>
+                <i class="bi bi-arrow-right projects-list__arrow"></i>
+            </li>
+            <li class="projects-list__item" data-project="2">
+                <span class="projects-list__num">03</span>
+                <span class="projects-list__name">CodifyLive</span>
+                <i class="bi bi-arrow-right projects-list__arrow"></i>
+            </li>
+            <li class="projects-list__item" data-project="3">
+                <span class="projects-list__num">04</span>
+                <span class="projects-list__name">drf-boilerplate</span>
+                <i class="bi bi-arrow-right projects-list__arrow"></i>
+            </li>
+            <li class="projects-list__item" data-project="4">
+                <span class="projects-list__num">05</span>
+                <span class="projects-list__name">Autoblue</span>
+                <i class="bi bi-arrow-right projects-list__arrow"></i>
+            </li>
+            <li class="projects-list__item" data-project="5">
+                <span class="projects-list__num">06</span>
+                <span class="projects-list__name">djang-setup</span>
+                <i class="bi bi-arrow-right projects-list__arrow"></i>
+            </li>
+            <li class="projects-list__item" data-project="6">
+                <span class="projects-list__num">07</span>
+                <span class="projects-list__name">MapScrape</span>
+                <i class="bi bi-arrow-right projects-list__arrow"></i>
+            </li>
+        </ul>
+
+        <div class="projects-preview">
+
+            <div class="projects-preview__item active" data-project="0">
+                <img
+                    src="{% static 'portfolio/images/portal.png' %}"
+                    alt="MusiquePeulh"
+                    class="projects-preview__img"
+                    loading="lazy"
+                />
+                <div class="projects-preview__body">
+                    <h2 class="projects-preview__title">FlowTheory AI — Client Portal API</h2>
+                    <p class="projects-preview__desc">
+                        A production-grade REST API backend for a client management portal, built
+                        with Django and Django REST Framework. Secured via JWT (SimpleJWT) with full
+                        password reset flows and transactional emails through Resend. Features a
+                        multi-tenant organization system with role-based access control, task
+                        management, and a dual project pipeline — org-initiated Requests and
+                        staff-initiated Recommendations — each with status pipelines, threaded
+                        comments, soft-delete, and per-org data visibility. Fully documented with
+                        drf-spectacular (OpenAPI), tested with pytest-django, and configured via
+                        python-dotenv. Stack: Python, Django, DRF, PostgreSQL, JWT, Resend.
+                    </p>
+                </div>
+            </div>
+
+            <div class="projects-preview__item" data-project="1">
+                <img
+                    src="{% static 'portfolio/images/musiquepeulh.png' %}"
+                    alt="MusiquePeulh"
+                    class="projects-preview__img"
+                    loading="lazy"
+                />
+                <div class="projects-preview__body">
+                    <h2 class="projects-preview__title">MusiquePeulh</h2>
+                    <p class="projects-preview__desc">
+                        A REST API backend for a Fulani music streaming platform, built with Django
+                        REST Framework. Implements JWT authentication (SimpleJWT) with token
+                        blacklisting, email verification, and time-expiring OTP-based password
+                        reset. Custom user model enables email-based login. Song models track full
+                        artist metadata with custom querysets for consistent serialization. Audio
+                        files and cover images are stored on DigitalOcean Spaces (S3-compatible).
+                        Covered by unit tests across models, serializers, and views, and documented
+                        with drf-spectacular (OpenAPI).
+                        <a href="https://musiquepeulh.com" target="_blank" style="color: var(--btn-color)">Visit Site</a>
+                    </p>
+                    <a href="https://github.com/fulanii/musique-peulh-backend" class="projects-preview__link" target="_blank">
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="projects-preview__item" data-project="2">
                 <img
                     src="{% static 'portfolio/images/codifylive.png' %}"
-                    alt="codifylive picture"
+                    alt="CodifyLive"
+                    class="projects-preview__img"
+                    loading="lazy"
                 />
-                <!-- <figcaption>Project demonstration.</figcaption> -->
-            </figure>
-            <div class="timeline-content">
-                <h2 class="timeline-content-h2">CodifyLive</h2>
-                <p class="timeline-content-p">
-                    <strong>CodifyLive</strong>
-                    A free, open-source web app that lets users connect with friends
-                    to chat, collaborate, and code together in real time. It supports 1-on-1
-                    messaging, live collaboration sessions, in-browser code editing and execution,
-                    file management, and planned audio/video calls — all in a single, streamlined
-                    interface. Built with a backend-first, production-focused architecture,
-                    CodifyLive emphasizes secure authentication, real-time updates, and scalable
-                    system design using FastAPI and Supabase.
-                    <a
-                        href="https://codifylive.com"
-                        target="_blank"
-                        style="color: var(--btn-color)"
-                    >
-                        Visit Site
+                <div class="projects-preview__body">
+                    <h2 class="projects-preview__title">CodifyLive</h2>
+                    <p class="projects-preview__desc">
+                        A real-time collaborative coding platform backend built with FastAPI and
+                        Python. Handles live code collaboration, WebRTC video/audio signaling,
+                        real-time chat, and a full social/friend system. Powered by Supabase
+                        (PostgreSQL, Auth, Realtime), WebSockets, SQLAlchemy ORM, and JWT
+                        authentication. Async architecture via Uvicorn/uvloop, with Pydantic for
+                        strict request validation, Sentry for error monitoring, and full CORS and
+                        multipart file handling support.
+                        <a href="https://codifylive.com" target="_blank" style="color: var(--btn-color)">Visit Site</a>
+                    </p>
+                    <a href="https://github.com/fulanii/codify-live-backend" class="projects-preview__link" target="_blank">
+                        View on GitHub
                     </a>
-                </p>
-                <a
-                    href="https://github.com/fulanii/codify-live-backend"
-                    class="project-link"
-                    target="_blank"
-                >
-                    View Project Github
-                </a>
+                </div>
             </div>
-        </div>
 
-        <div class="timeline-item" data-aos="fade-up">
-            <figure class="timeline-img">
-                <img src="{% static 'portfolio/images/drf.png' %}" alt="drf picture" />
-                <!-- <figcaption>Project demonstration.</figcaption> -->
-            </figure>
-            <div class="timeline-content">
-                <h2 class="timeline-content-h2">drf-boilerplate</h2>
-                <p class="timeline-content-p">
-                    <strong>drf-boilerplate</strong>
-                    A production-ready template for a Django REST Framework apps with a different
-                    frontend like react etc, featuring a custom user model where users can sign up,
-                    login, verify email and reset password. Authentication using JWT authentication
-                    via djangorestframework-simplejwt, auto generated docs with drf_spectacular
-                    email code verifictions using resend and separated configuration for local
-                    development and production deployment.
-                </p>
-                <a
-                    href="https://github.com/fulanii/drf-boilerplate"
-                    class="project-link"
-                    target="_blank"
-                >
-                    View Project Github
-                </a>
-            </div>
-        </div>
-
-        <div class="timeline-item" data-aos="fade-up">
-            <figure class="timeline-img">
-                <img src="{% static 'portfolio/images/autoblue_demo.gif' %}" alt="Autoblue demo" />
-                <!-- <figcaption>Project demonstration.</figcaption> -->
-            </figure>
-            <div class="timeline-content">
-                <h2 class="timeline-content-h2">Autoblue</h2>
-                <p class="timeline-content-p">
-                    <strong>Autoblue</strong>
-                    is an open-source Django-based web application designed to automate posts on
-                    <a
-                        href="https://bsky.app/"
-                        target="_blank"
-                        style="color: var(--btn-color); text-decoration: none"
-                    >
-                        Bluesky
+            <div class="projects-preview__item" data-project="3">
+                <img
+                    src="{% static 'portfolio/images/drf.png' %}"
+                    alt="drf-boilerplate"
+                    class="projects-preview__img"
+                    loading="lazy"
+                />
+                <div class="projects-preview__body">
+                    <h2 class="projects-preview__title">drf-boilerplate</h2>
+                    <p class="projects-preview__desc">
+                        A production-ready Django REST Framework starter with a custom user model,
+                        JWT authentication via SimpleJWT, email verification, and password reset —
+                        ready to pair with any frontend. Includes auto-generated API docs via
+                        drf-spectacular, transactional emails through Resend, and cleanly separated
+                        local/production settings. Designed to eliminate the repetitive setup work
+                        on every new DRF project.
+                    </p>
+                    <a href="https://github.com/fulanii/drf-boilerplate" class="projects-preview__link" target="_blank">
+                        View on GitHub
                     </a>
-                    .The frontend is built entirely with vanilla technologies, while the backend
-                    uses Python, PostgreSQL, Nginx, Redis, and Celery for task queuing. The
-                    application is containerized with Docker and deployed to a DigitalOcean VPS
-                    using GitHub Actions.
-                </p>
-
-                <a href="https://github.com/fulanii/autoblue" class="project-link" target="_blank">
-                    View Project Github
-                </a>
+                </div>
             </div>
-        </div>
 
-        <div class="timeline-item" data-aos="fade-up">
-            <figure class="timeline-img">
+            <div class="projects-preview__item" data-project="4">
+                <img
+                    src="{% static 'portfolio/images/autoblue_demo.gif' %}"
+                    alt="Autoblue"
+                    class="projects-preview__img"
+                    loading="lazy"
+                />
+                <div class="projects-preview__body">
+                    <h2 class="projects-preview__title">Autoblue</h2>
+                    <p class="projects-preview__desc">
+                        An open-source Django application for scheduling and automating posts to
+                        <a href="https://bsky.app/" target="_blank" style="color: var(--btn-color)">Bluesky</a>
+                        via the AT Protocol. Background jobs are handled by Celery with Redis as
+                        the message broker, backed by PostgreSQL and served behind Nginx. The full
+                        stack is containerized with Docker Compose and deployed to a DigitalOcean
+                        VPS via a GitHub Actions CI/CD pipeline.
+                    </p>
+                    <a href="https://github.com/fulanii/autoblue" class="projects-preview__link" target="_blank">
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="projects-preview__item" data-project="5">
                 <img
                     src="{% static 'portfolio/images/djang-setup-demo.gif' %}"
-                    alt="Autoblue demo"
+                    alt="djang-setup"
+                    class="projects-preview__img"
+                    loading="lazy"
                 />
-                <figcaption>Project demonstration.</figcaption>
-            </figure>
-            <div class="timeline-content">
-                <h2 class="timeline-content-h2">djang-setup</h2>
-                <p class="timeline-content-p">
-                    <strong>djang-setup</strong>
-                    Is a simple open-source Django cli tool that automates project creation, app
-                    setup, settings config, and more!
-                </p>
-
-                <a
-                    href="https://github.com/fulanii/djang_setup"
-                    class="project-link"
-                    target="_blank"
-                >
-                    View Project Github
-                </a>
+                <div class="projects-preview__body">
+                    <h2 class="projects-preview__title">djang-setup</h2>
+                    <p class="projects-preview__desc">
+                        An open-source CLI tool that scaffolds Django projects in seconds —
+                        generating apps, configuring settings, setting up environment files, and
+                        wiring common packages automatically. Built to cut the repetitive
+                        boilerplate out of every new Django project and get straight to building.
+                    </p>
+                    <a href="https://github.com/fulanii/djang_setup" class="projects-preview__link" target="_blank">
+                        View on GitHub
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <div class="timeline-item" data-aos="fade-up">
-            <figure class="timeline-img">
-                <img src="{% static 'portfolio/images/mapscrape.gif' %}" alt="Autoblue demo" />
-                <figcaption>Project demonstration.</figcaption>
-            </figure>
-            <div class="timeline-content">
-                <h2 class="timeline-content-h2">MapScrape</h2>
-                <p class="timeline-content-p">
-                    <strong>MapScrape</strong>
-                    A Selenium bot built with python, that scrape's publically avaible business data
-                    form Google maps.
-                </p>
-
-                <a href="https://github.com/fulanii/mapscape" class="project-link" target="_blank">
-                    View Project Github
-                </a>
+            <div class="projects-preview__item" data-project="6">
+                <img
+                    src="{% static 'portfolio/images/mapscrape.gif' %}"
+                    alt="MapScrape"
+                    class="projects-preview__img"
+                    loading="lazy"
+                />
+                <div class="projects-preview__body">
+                    <h2 class="projects-preview__title">MapScrape</h2>
+                    <p class="projects-preview__desc">
+                        A Python-based scraping tool that extracts publicly available business data
+                        from Google Maps using Selenium WebDriver. Automates search, pagination,
+                        and structured data extraction — outputting business names, addresses,
+                        phone numbers, and ratings at scale.
+                    </p>
+                    <a href="https://github.com/fulanii/mapscape" class="projects-preview__link" target="_blank">
+                        View on GitHub
+                    </a>
+                </div>
             </div>
+
         </div>
     </div>
 </section>

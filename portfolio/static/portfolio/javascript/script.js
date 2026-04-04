@@ -43,4 +43,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // AOS animation
     AOS.init();
+
+    // Projects list/preview interaction
+    const listItems = document.querySelectorAll(".projects-list__item");
+    const previewItems = document.querySelectorAll(".projects-preview__item");
+
+    listItems.forEach((item) => {
+        item.addEventListener("click", () => {
+            const index = item.dataset.project;
+
+            listItems.forEach((el) => el.classList.remove("active"));
+            previewItems.forEach((el) => el.classList.remove("active"));
+
+            item.classList.add("active");
+            document.querySelector(`.projects-preview__item[data-project="${index}"]`).classList.add("active");
+        });
+    });
 });
